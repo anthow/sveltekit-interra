@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "npm run build:prepare && vite build",
-    "build:prepare": "powershell -Command \"New-Item -ItemType Directory -Path '.svelte-kit/output' -Force; Set-Content -Path '.svelte-kit/output/_headers' -Value '# Headers'\"",
+    "build": "vite build",
     "dev": "vite dev",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -26,6 +25,7 @@
   "type": "module",
   "dependencies": {
     "@datocms/cda-client": "^0.2.7",
+    "@sveltejs/adapter-auto": "^7.0.0",
     "datocms-client": "^3.0.0"
   }
 }
