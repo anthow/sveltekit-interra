@@ -32,7 +32,6 @@
     on:click={() => navbarOpen = !navbarOpen}
     on:keydown={(e) => e.key === 'Enter' && (navbarOpen = !navbarOpen)}
     aria-label="Ouvrir/fermer le menu"
-    role="button"
     tabindex="0"
   >
     <div class="w-6 h-0.5 bg-gray-600 transition-all duration-300 {navbarOpen ? 'rotate-45 translate-y-1' : ''}"></div>
