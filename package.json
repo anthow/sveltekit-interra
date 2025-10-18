@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "vite build",
+    "build": "npm run build:prepare && vite build",
+    "build:prepare": "node -e \"const fs=require('fs'); fs.mkdirSync('.svelte-kit/output', {recursive:true}); fs.writeFileSync('.svelte-kit/output/_headers', '# Headers for all pages')\"",
     "dev": "vite dev",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
