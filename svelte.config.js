@@ -1,9 +1,12 @@
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'
-import adapter from '@sveltejs/adapter-auto'
+import adapter from '@sveltejs/adapter-netlify'
 
 export default {
   preprocess: vitePreprocess(),
   kit: {
-    adapter: adapter()
+    adapter: adapter({
+      edge: false,
+      split: false
+    })
   }
 }
