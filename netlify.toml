@@ -1,13 +1,11 @@
 [build]
-command = "npm run build"
+command = "node node_modules/@sveltejs/kit/svelte-kit.js sync && node node_modules/@sveltejs/kit/svelte-kit.js build"
 publish = ".netlify/publish"
 
 [functions]
 node_bundler = "esbuild"
-# Très important si jamais Netlify n'incluait pas automatiquement ces fichiers :
 included_files = [".netlify/server/**"]
 
-# (Facultatif) En-têtes de sécurité
 [[headers]]
 for = "/*"
   [headers.values]
