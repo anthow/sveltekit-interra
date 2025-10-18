@@ -4,9 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "svelte-kit sync && svelte-kit build",
-    "dev": "svelte-kit dev",
-    "preview": "svelte-kit preview",
+    "build": "svelte-kit sync && vite build",
+    "dev": "vite dev",
+    "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
   },
