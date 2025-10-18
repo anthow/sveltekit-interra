@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Styles personnalisés Interra */
+.font-oxygen {
+  font-family: 'Oxygen', sans-serif;
+}
+
+.font-roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Typographie par défaut - exactement comme Gatsby */
+html,
+body {
+  height: 100%;
+  font-family: 'Oxygen', sans-serif;
+}
+
+body,
+p,
+a,
+li {
+  font-family: 'Oxygen', sans-serif;
+}
+
+p {
+  font-size: 1.05em;
+}
+
+@media only screen and (max-width: 600px) {
+  p {
+    font-size: 1em;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+}
+
+/* Styles pour les paragraphes */
+.paragraphe p {
+  margin-bottom: 10px;
+}
+
+.paragraphe h2 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 1.5em;
+}
+
+.paragraphe ul li,
+.list-duo ul li {
+  list-style-type: circle;
+  margin-bottom: 2px;
+  margin-left: 15px;
+}
+
+/* Header styles */
+.fullheader {
+  width: 100% !important;
+}
+
+.bg-vert-interra {
+  background-color: #5FAF74;
+}
+
+.text-vert-interra {
+  color: #5FAF74;
+}
+
+.bg-orange-interra {
+  background-color: #FA871C;
+}
+
+.text-orange-interra {
+  color: #FA871C;
+}
+
+.bg-jaune-interra {
+  background-color: #FDB516;
+}
+
+.text-jaune-interra {
+  color: #FDB516;
+}
+
+.bg-bleu-interra {
+  background-color: #113A4C;
+}
+
+.text-bleu-interra {
+  color: #113A4C;
+}
+
+.bg-vert-clair-interra {
+  background-color: #F6FFFE;
+}
+
+.text-vert-clair-interra {
+  color: #F6FFFE;
+}
+
+.bg-orange-clair-interra {
+  background-color: #FFBF83;
+}
+
+.text-orange-clair-interra {
+  color: #FFBF83;
+}
+
+.bg-white-interra {
+  background-color: #FFFFFF;
+}
+
+.text-white-interra {
+  color: #FFFFFF;
+}
+
+/* Styles pour les boutons */
+.btn-interra {
+  @apply px-4 py-2 rounded font-bold transition-colors duration-200;
+}
+
+.btn-vert {
+  @apply bg-vert-interra text-white hover:bg-white hover:text-vert-interra hover:border-vert-interra border;
+}
+
+.btn-orange {
+  @apply bg-orange-interra text-white hover:bg-white hover:text-orange-interra hover:border-orange-interra border;
+}
+
+.btn-jaune {
+  @apply bg-jaune-interra text-white hover:bg-white hover:text-jaune-interra hover:border-jaune-interra border;
+}
+
+.btn-bleu {
+  @apply bg-bleu-interra text-white hover:bg-white hover:text-bleu-interra hover:border-bleu-interra border;
+}
