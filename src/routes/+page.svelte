@@ -4,14 +4,13 @@ import Information from '$lib/components/Information.svelte';
 import SliderHome from '$lib/components/SliderHome.svelte';
 import Footer from '$lib/components/Footer.svelte';
 import Navbar from '$lib/components/Navbar.svelte';
+import SEO from '$lib/components/SEO.svelte';
+import { pageSEOConfigs } from '$lib/seo';
 
 export let data: PageData;
 </script>
 
-<svelte:head>
-  <title>Accueil - INTERRA</title>
-  <meta name="description" content="Interra veut permettre plus d'interactions entre les personnes récemment arrivées en terre liégeoise et la population locale." />
-</svelte:head>
+<SEO config={pageSEOConfigs['/']} />
 
 <div class="min-h-screen flex flex-col h-screen">
   <section class="fullheader w-12/12 m-auto fixed bg-white z-50 font-sans">

@@ -1,3 +1,44 @@
-# allow crawling everything by default
+# Configuration robots.txt optimisée pour INTERRA
 User-agent: *
-Disallow:
+Allow: /
+
+# Sitemap
+Sitemap: https://interra.be/sitemap.xml
+
+# Crawl-delay pour éviter la surcharge
+Crawl-delay: 1
+
+# Bloquer les fichiers sensibles
+Disallow: /api/
+Disallow: /.netlify/
+Disallow: /.svelte-kit/
+Disallow: /node_modules/
+Disallow: /*.json$
+Disallow: /*.ts$
+Disallow: /*.js$
+
+# Autoriser les ressources importantes
+Allow: /images/
+Allow: /favicon.ico
+Allow: /robots.txt
+Allow: /sitemap.xml
+
+# Spécifique pour Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Spécifique pour Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Bloquer les bots indésirables
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /

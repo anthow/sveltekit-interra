@@ -2,14 +2,13 @@
   import type { PageData } from './$types';
   import Footer from '$lib/components/Footer.svelte';
   import Navbar from '$lib/components/Navbar.svelte';
+  import SEO from '$lib/components/SEO.svelte';
+  import { pageSEOConfigs } from '$lib/seo';
 
   export let data: PageData;
 </script>
 
-<svelte:head>
-  <title>Duo2Change - INTERRA</title>
-  <meta name="description" content="Découvrez Duo2Change, notre programme de mentorat qui crée des duos entre personnes récemment arrivées et habitants de Liège." />
-</svelte:head>
+<SEO config={pageSEOConfigs['/duo2change']} />
 
 <div class="min-h-screen flex flex-col h-screen">
   <section class="fullheader w-12/12 m-auto fixed bg-white z-50 font-sans">

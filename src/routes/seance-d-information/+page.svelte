@@ -2,14 +2,13 @@
   import type { PageData } from './$types';
   import Footer from '$lib/components/Footer.svelte';
   import Navbar from '$lib/components/Navbar.svelte';
+  import SEO from '$lib/components/SEO.svelte';
+  import { pageSEOConfigs } from '$lib/seo';
 
   export let data: PageData;
 </script>
 
-<svelte:head>
-  <title>Séance d'information - INTERRA</title>
-  <meta name="description" content="Participez à nos séances d'information pour découvrir nos projets et nos activités d'intégration." />
-</svelte:head>
+<SEO config={pageSEOConfigs['/seance-d-information']} />
 
 <div class="min-h-screen flex flex-col h-screen">
   <section class="fullheader w-12/12 m-auto fixed bg-white z-50 font-sans">
