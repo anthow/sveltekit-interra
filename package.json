@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "vite build",
+    "build": "npm run build:prepare && vite build",
+    "build:prepare": "powershell -Command \"New-Item -ItemType Directory -Path '.svelte-kit/output' -Force; Set-Content -Path '.svelte-kit/output/_headers' -Value '# Headers'\"",
     "dev": "vite dev",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",

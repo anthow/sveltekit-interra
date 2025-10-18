@@ -5,7 +5,8 @@ export default {
   preprocess: vitePreprocess(),
   kit: {
     adapter: adapter({
-      edge: false
+      edge: false,
+      split: false
     })
   }
 }
