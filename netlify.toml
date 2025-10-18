@@ -1,9 +1,16 @@
 [build]
-  command = "CI='' npm run build"
-  publish = ".svelte-kit/output"
-
-[build.environment]
-  NODE_VERSION = "20.19.0"
+command = "npm run build"
+publish = ".netlify/publish"
 
 [functions]
-  node_bundler = "zisi"
+node_bundler = "esbuild"
+# Très important si jamais Netlify n'incluait pas automatiquement ces fichiers :
+included_files = [".netlify/server/**"]
+
+# (Facultatif) En-têtes de sécurité
+[[headers]]
+for = "/*"
+  [headers.values]
+  Referrer-Policy = "strict-origin-when-cross-origin"
+  X-Content-Type-Options = "nosniff"
+  X-Frame-Options = "DENY"

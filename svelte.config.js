@@ -1,9 +1,13 @@
+// svelte.config.js (ou .ts)
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'
 import adapter from '@sveltejs/adapter-netlify'
 
-export default {
+/** @type {import('@sveltejs/kit').Config} */
+const config = {
   preprocess: vitePreprocess(),
   kit: {
     adapter: adapter()
   }
 }
+
+export default config
