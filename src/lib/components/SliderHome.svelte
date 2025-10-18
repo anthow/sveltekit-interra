@@ -85,32 +85,4 @@
     height: 100%;
     object-fit: cover;
   }
-  
-  .slider-dots {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-    z-index: 10;
-  }
-  
-  .dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    border: 2px solid white;
-    background-color: transparent;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .dot.active {
-    background-color: white;
-  }
-  
-  .dot:hover {
-    background-color: rgba(255, 255, 255, 0.7);
-  }
 </style>
