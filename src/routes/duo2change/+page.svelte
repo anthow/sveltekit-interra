@@ -31,6 +31,7 @@
             
             <section class="md:grid grid-cols-2  gap-x-10 gap-y-20">
               <video controls class="w-full px-10 mb-10 md:mb-0">
+                <track kind="captions" src="" srclang="fr" label="Français" default />
                 {#if data.duoLangue?.videoKSako?.video?.mp4Url}
                   <source src={data.duoLangue.videoKSako.video.mp4Url} type="video/mp4" />
                 {:else}

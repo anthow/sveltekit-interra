@@ -27,11 +27,18 @@
          </a>
 
   <!-- Toggle pour mobile -->
-  <div class="md:hidden cursor-pointer p-4" on:click={() => navbarOpen = !navbarOpen}>
+  <button 
+    class="md:hidden cursor-pointer p-4" 
+    on:click={() => navbarOpen = !navbarOpen}
+    on:keydown={(e) => e.key === 'Enter' && (navbarOpen = !navbarOpen)}
+    aria-label="Ouvrir/fermer le menu"
+    role="button"
+    tabindex="0"
+  >
     <div class="w-6 h-0.5 bg-gray-600 transition-all duration-300 {navbarOpen ? 'rotate-45 translate-y-1' : ''}"></div>
     <div class="w-6 h-0.5 bg-gray-600 mt-1 transition-all duration-300 {navbarOpen ? 'opacity-0' : ''}"></div>
     <div class="w-6 h-0.5 bg-gray-600 mt-1 transition-all duration-300 {navbarOpen ? '-rotate-45 -translate-y-1' : ''}"></div>
-      </div>
+  </button>
 
   <!-- Menu principal -->
         <div class="  md:w-auto flex flex-col {navbarOpen ? 'fixed top-0 left-0 w-full h-full bg-white z-50 justify-start pt-20' : 'hidden md:flex'}">

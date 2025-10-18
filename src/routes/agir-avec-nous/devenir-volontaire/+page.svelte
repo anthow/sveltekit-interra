@@ -28,7 +28,7 @@
             <input type="hidden" name="form-name" value="volontaire duo" />
             
             <div class="flex flex-col gap-5">
-              <label class="text-orange-interra font-bold text-lg">Nom</label>
+              <label for="nom" class="text-orange-interra font-bold text-lg">Nom</label>
               <input
                 type="text"
                 name="nom"
@@ -39,7 +39,7 @@
             </div>
             
             <div class="flex flex-col gap-5">
-              <label class="text-orange-interra font-bold text-lg">Prénom</label>
+              <label for="prenom" class="text-orange-interra font-bold text-lg">Prénom</label>
               <input
                 type="text"
                 name="prenom"
@@ -50,7 +50,7 @@
             </div>
             
             <div class="flex flex-col gap-5">
-              <label class="text-orange-interra font-bold text-lg">Téléphone</label>
+              <label for="telephone" class="text-orange-interra font-bold text-lg">Téléphone</label>
               <input
                 type="text"
                 name="telephone"
@@ -60,7 +60,7 @@
             </div>
             
             <div class="flex flex-col gap-5">
-              <label class="text-orange-interra font-bold text-lg">Mail</label>
+              <label for="mail" class="text-orange-interra font-bold text-lg">Mail</label>
               <input
                 type="email"
                 name="mail"
