@@ -1,4 +1,4 @@
-// import { performRequest } from '../../../lib/datocms';
+// import { performRequest } from '$lib/datocms';
 
 export async function GET() {
   // Données statiques temporaires avec le bon nom de modèle

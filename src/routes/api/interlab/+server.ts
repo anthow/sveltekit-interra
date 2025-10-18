@@ -1,4 +1,4 @@
-import { performRequest } from '../../../lib/datocms';
+import { performRequest } from '$lib/datocms';
 
 const QUERY = `
   query MyQuery {

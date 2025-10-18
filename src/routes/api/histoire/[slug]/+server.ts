@@ -1,5 +1,5 @@
 import { json } from '@sveltejs/kit';
-import { performRequest } from '$lib/datocms.js';
+import { performRequest } from '$lib/datocms';
 
 export async function GET({ params }) {
   try {
