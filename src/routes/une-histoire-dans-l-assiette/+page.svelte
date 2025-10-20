@@ -59,6 +59,9 @@
                   alt="Histoire dans l'assiette 2" 
                   class="w-full h-auto rounded-lg shadow-lg"
                 />
+                <p class="text-sm text-gray-600 mt-4 text-center italic">
+                  Merci au chef Thomas Troupin (<a href="https://www.toma-restaurant.be/" target="_blank" rel="noopener noreferrer" class="text-vert-interra hover:underline">Restaurant Toma!</a>) pour son précieux soutien
+                </p>
               </div>
               <div class="md:w-1/2">
                 <div class="bg-orange-interra text-white p-8 rounded-lg">
