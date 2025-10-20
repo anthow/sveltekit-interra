@@ -4,4 +4,10 @@ publish = ".netlify/publish"
 
 [functions]
 node_bundler = "esbuild"
-included_files = [".netlify/server/**"]
+
+[[headers]]
+for = "/*"
+  [headers.values]
+  Referrer-Policy = "strict-origin-when-cross-origin"
+  X-Content-Type-Options = "nosniff"
+  X-Frame-Options = "DENY"
