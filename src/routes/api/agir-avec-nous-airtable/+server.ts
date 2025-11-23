@@ -1,6 +1,9 @@
 import { json } from '@sveltejs/kit';
 
-const BASE_ID = 'appYopHw9tC4B2Q5r';
+const BASE_ID = process.env.AIRTABLE_BASE_ID;
+if (!BASE_ID) {
+  throw new Error('AIRTABLE_BASE_ID environment variable is required');
+}
 const TABLE_NAME = 'Agir avec nous';
 
 // Fonction pour extraire l'image depuis le tableau Airtable

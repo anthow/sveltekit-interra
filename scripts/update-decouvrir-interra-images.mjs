@@ -58,7 +58,34 @@ try {
   }
 }
 
-const BASE_ID = 'appYopHw9tC4B2Q5r';
+// Charger BASE_ID depuis les variables d'environnement
+let BASE_ID = process.env.AIRTABLE_BASE_ID;
+if (!BASE_ID) {
+  try {
+    const envPath = join(__dirname, '..', '.env');
+    let envFile;
+    try {
+      envFile = readFileSync(envPath, 'utf-8');
+    } catch {
+      envFile = readFileSync(envPath, 'utf-16le');
+      envFile = envFile.replace(/\0/g, '');
+    }
+    const globalMatch = envFile.match(/AIRTABLE_BASE_ID\s*=\s*([^\r\n#]+)/);
+    if (globalMatch) {
+      BASE_ID = globalMatch[1].trim();
+      BASE_ID = BASE_ID.replace(/^["'\s]+|["'\s]+$/g, '');
+      BASE_ID = BASE_ID.replace(/\0/g, '');
+    }
+  } catch (e) {
+    // Ignorer
+  }
+}
+
+if (!BASE_ID) {
+  console.error('AIRTABLE_BASE_ID n\'est pas défini dans les variables d\'environnement ou .env');
+  process.exit(1);
+}
+
 const TABLE_NAME = 'Découvrir Interra';
 
 // Si le token n'a pas été trouvé, essayer de le lire depuis un fichier temporaire

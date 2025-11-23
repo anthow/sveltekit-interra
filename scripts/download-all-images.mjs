@@ -5,6 +5,35 @@ import { dirname, join } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
+// Fonction pour charger BASE_ID depuis les variables d'environnement
+function loadAirtableBaseId() {
+  let baseId = process.env.AIRTABLE_BASE_ID;
+  if (baseId) return baseId;
+  
+  // Essayer de le lire depuis .env
+  try {
+    const envPath = join(__dirname, '..', '.env');
+    let envFile;
+    try {
+      envFile = readFileSync(envPath, 'utf-8');
+    } catch {
+      envFile = readFileSync(envPath, 'utf-16le');
+      envFile = envFile.replace(/\0/g, '');
+    }
+    const globalMatch = envFile.match(/AIRTABLE_BASE_ID\s*=\s*([^\r\n#]+)/);
+    if (globalMatch) {
+      baseId = globalMatch[1].trim();
+      baseId = baseId.replace(/^["'\s]+|["'\s]+$/g, '');
+      baseId = baseId.replace(/\0/g, '');
+      return baseId;
+    }
+  } catch (e) {
+    // Ignorer
+  }
+  
+  return null;
+}
+
 // Pas besoin de token, on lit directement depuis les fichiers de contenu
 const imagesDir = join(__dirname, '..', 'static', 'images');
 const imageMap = new Map(); // Pour éviter les doublons
@@ -321,7 +350,12 @@ async function processAllContent() {
           }
         }
 
-        const BASE_ID = 'appYopHw9tC4B2Q5r';
+        const BASE_ID = loadAirtableBaseId();
+        if (!BASE_ID) {
+          console.log('⚠️ BASE_ID non disponible pour Formation interculturelle, utilisation des URLs existantes\n');
+          await processContentFile(join(__dirname, '..', 'src', 'lib', 'content', 'formation-interculturelle.ts'), 'Formation interculturelle', 'formation.jpg');
+          return;
+        }
         const TABLE_NAME = 'Formation interculturelle';
         const encodedTableName = encodeURIComponent(TABLE_NAME);
         const url = `https://api.airtable.com/v0/${BASE_ID}/${encodedTableName}?maxRecords=100`;
@@ -436,7 +470,12 @@ async function processAllContent() {
       }
     }
 
-    const BASE_ID = 'appYopHw9tC4B2Q5r';
+    const BASE_ID = loadAirtableBaseId();
+    if (!BASE_ID) {
+      console.log('⚠️ BASE_ID non disponible pour Nos projets, utilisation des URLs existantes\n');
+      await processContentFile(join(__dirname, '..', 'src', 'lib', 'content', 'nos-projets.ts'), 'Nos projets', 'nos-projets.jpg');
+      return;
+    }
     const TABLE_NAME = 'Nos projets';
     const encodedTableName = encodeURIComponent(TABLE_NAME);
     const url = `https://api.airtable.com/v0/${BASE_ID}/${encodedTableName}?maxRecords=100`;
@@ -556,7 +595,12 @@ async function processAllContent() {
       }
     }
 
-    const BASE_ID = 'appYopHw9tC4B2Q5r';
+    const BASE_ID = loadAirtableBaseId();
+    if (!BASE_ID) {
+      console.log('⚠️ BASE_ID non disponible pour Duo langue, utilisation des URLs existantes\n');
+      await processContentFile(join(__dirname, '..', 'src', 'lib', 'content', 'duo-langue.ts'), 'Duo langue', 'duo-langue.jpg');
+      return;
+    }
     const TABLE_NAME = 'Duo langue';
     const encodedTableName = encodeURIComponent(TABLE_NAME);
     const url = `https://api.airtable.com/v0/${BASE_ID}/${encodedTableName}?maxRecords=100`;
@@ -741,7 +785,12 @@ async function processAllContent() {
       }
     }
 
-    const BASE_ID = 'appYopHw9tC4B2Q5r';
+    const BASE_ID = loadAirtableBaseId();
+    if (!BASE_ID) {
+      console.log('⚠️ BASE_ID non disponible pour Footer, utilisation des URLs existantes\n');
+      await processContentFile(join(__dirname, '..', 'src', 'lib', 'content', 'footer.ts'), 'Footer', 'footer.jpg');
+      return;
+    }
     const TABLE_NAME = 'Footer';
     const encodedTableName = encodeURIComponent(TABLE_NAME);
     const url = `https://api.airtable.com/v0/${BASE_ID}/${encodedTableName}?maxRecords=100`;

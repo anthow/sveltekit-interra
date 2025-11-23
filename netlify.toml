@@ -5,6 +5,10 @@ publish = ".netlify/publish"
 [functions]
 node_bundler = "esbuild"
 
+# Configuration pour ignorer le scan de secrets pour AIRTABLE_BASE_ID (ID public, pas un secret)
+[build.environment]
+SECRETS_SCAN_OMIT_KEYS = "AIRTABLE_BASE_ID"
+
 # Headers de sécurité pour toutes les pages
 [[headers]]
 for = "/*"
