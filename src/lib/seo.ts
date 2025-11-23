@@ -231,11 +231,6 @@ export const pageSEOConfigs: Record<string, SEOConfig> = {
     description: 'Rejoignez InterLab, notre laboratoire d\'innovation sociale pour développer des projets d\'intégration innovants.',
     keywords: ['interlab', 'innovation sociale', 'laboratoire', 'projets innovants']
   },
-  '/histoires': {
-    title: 'Histoires d\'Intégration - Témoignages INTERRA',
-    description: 'Découvrez les histoires inspirantes de personnes qui ont réussi leur intégration grâce aux projets INTERRA.',
-    keywords: ['témoignages', 'histoires', 'intégration réussie', 'inspiration']
-  },
   '/projets': {
     title: 'Nos Projets - INTERRA',
     description: 'Explorez tous nos projets d\'intégration et d\'interculturalité : Duo2Change, formations, ateliers et bien plus.',
