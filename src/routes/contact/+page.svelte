@@ -2,14 +2,12 @@
   import type { PageData } from './$types';
   import Footer from '$lib/components/Footer.svelte';
   import Navbar from '$lib/components/Navbar.svelte';
-
+  import SEO from '$lib/components/SEO.svelte';
+  import { pageSEOConfigs } from '$lib/seo';
   export let data: PageData;
 </script>
 
-<svelte:head>
-  <title>Contact - INTERRA</title>
-  <meta name="description" content="Contactez l'équipe d'INTERRA pour toute question ou information." />
-</svelte:head>
+<SEO config={pageSEOConfigs['/contact']} />
 
 <div class="min-h-screen flex flex-col h-screen">
   <section class="fullheader w-12/12 m-auto fixed bg-white z-50 font-sans">
@@ -29,9 +27,11 @@
                 <div class="flex flex-col">
                   {#if personne.photo?.url}
                     <img 
-                      src={personne.photo.url} 
+                      src={personne.photo.url || ''} 
                       alt={personne.photo.alt || personne.nomPrNom} 
                       class="m-auto"
+                      loading="lazy"
+                      decoding="async"
                     />
                   {:else}
                     <div class="m-auto w-64 h-64 bg-gray-200 flex items-center justify-center">

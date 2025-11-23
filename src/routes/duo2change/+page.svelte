@@ -4,7 +4,6 @@
   import Navbar from '$lib/components/Navbar.svelte';
   import SEO from '$lib/components/SEO.svelte';
   import { pageSEOConfigs } from '$lib/seo';
-
   export let data: PageData;
 </script>
 
@@ -29,15 +28,17 @@
             </h1>
             
             <section class="md:grid grid-cols-2  gap-x-10 gap-y-20">
-              <video controls class="w-full px-10 mb-10 md:mb-0">
-                <track kind="captions" src="" srclang="fr" label="Français" default />
-                {#if data.duoLangue?.videoKSako?.video?.mp4Url}
+              {#if data.duoLangue?.videoKSako?.video?.mp4Url && data.duoLangue.videoKSako.video.mp4Url !== ''}
+                <video controls class="w-full px-10 mb-10 md:mb-0">
+                  <track kind="captions" src="" srclang="fr" label="Français" default />
                   <source src={data.duoLangue.videoKSako.video.mp4Url} type="video/mp4" />
-                {:else}
-                  <source src="/videos/duo2change-intro.mp4" type="video/mp4" />
-                {/if}
-                Votre navigateur ne supporte pas la lecture vidéo.
-              </video>
+                  Votre navigateur ne supporte pas la lecture vidéo.
+                </video>
+              {:else}
+                <div class="w-full px-10 mb-10 md:mb-0 flex items-center justify-center bg-gray-100 rounded">
+                  <p class="text-gray-500 text-center p-8">Vidéo non disponible pour le moment</p>
+                </div>
+              {/if}
               <div class="w-10/12 md:w-12/12 m-auto">
                 <h2 class="font-black text-2xl mb-5 text-jaune-interra">
                   {data.duoLangue?.titreKSako || 'Qu\'est-ce que Duo2Change ?'}
@@ -85,7 +86,7 @@
               </div>
               <figure class="h-full order-1 md:order-2">
                 {#if data.duoLangue?.imageRoleInterra?.url}
-                  <img src={data.duoLangue.imageRoleInterra.url} alt={data.duoLangue.imageRoleInterra.alt || 'Rôle d\'Interra'} class="h-full w-full object-cover" />
+                  <img src={data.duoLangue.imageRoleInterra.url || ''} alt={data.duoLangue.imageRoleInterra.alt || 'Rôle d\'Interra'} class="h-full w-full object-cover" />
                 {:else}
                   <img src="/images/role-interra.jpg" alt="Rôle d'Interra" class="w-full h-auto" />
                 {/if}

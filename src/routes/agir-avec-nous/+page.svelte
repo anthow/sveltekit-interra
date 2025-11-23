@@ -2,14 +2,12 @@
   import type { PageData } from './$types';
   import Footer from '$lib/components/Footer.svelte';
   import Navbar from '$lib/components/Navbar.svelte';
-
+  import SEO from '$lib/components/SEO.svelte';
+  import { pageSEOConfigs } from '$lib/seo';
   export let data: PageData;
 </script>
 
-<svelte:head>
-  <title>Agir avec nous - INTERRA</title>
-  <meta name="description" content="Découvrez toutes les façons d'agir avec INTERRA : devenir membre, former un duo, rejoindre l'InterLab, participer à une formation ou devenir volontaire." />
-</svelte:head>
+<SEO config={pageSEOConfigs['/agir-avec-nous']} />
 
 <div class="min-h-screen flex flex-col h-screen">
   <section class="fullheader w-12/12 m-auto fixed bg-white z-50 font-sans">
@@ -36,9 +34,11 @@
               <figure class="h-full flex-1">
                 {#if data.agirAvecNou?.imageMembre?.url}
                   <img 
-                    src={data.agirAvecNou.imageMembre.url} 
+                    src={data.agirAvecNou.imageMembre.url || ''} 
                     alt={data.agirAvecNou.imageMembre.alt || 'Devenir membre'} 
                     class="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
                   />
                 {:else}
                   <div class="w-full h-full bg-gray-300 flex items-center justify-center">
@@ -94,9 +94,11 @@
               <figure class="h-full flex-1 order-1 md:order-2">
                 {#if data.agirAvecNou?.imageDuoLange?.url}
                   <img 
-                    src={data.agirAvecNou.imageDuoLange.url} 
+                    src={data.agirAvecNou.imageDuoLange.url || ''} 
                     alt={data.agirAvecNou.imageDuoLange.alt || 'Former un duo'} 
                     class="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
                   />
                 {:else}
                   <div class="w-full h-full bg-gray-300 flex items-center justify-center">
@@ -113,9 +115,11 @@
               <figure class="h-full flex-1">
                 {#if data.agirAvecNou?.imageTalent?.url}
                   <img 
-                    src={data.agirAvecNou.imageTalent.url} 
+                    src={data.agirAvecNou.imageTalent.url || ''} 
                     alt={data.agirAvecNou.imageTalent.alt || 'Rejoindre InterLab'} 
                     class="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
                   />
                 {:else}
                   <div class="w-full h-full bg-gray-300 flex items-center justify-center">
@@ -168,9 +172,11 @@
               <figure class="h-full flex-1 order-1 md:order-2">
                 {#if data.agirAvecNou?.imageParticiperFormation?.url}
                   <img 
-                    src={data.agirAvecNou.imageParticiperFormation.url} 
+                    src={data.agirAvecNou.imageParticiperFormation.url || ''} 
                     alt={data.agirAvecNou.imageParticiperFormation.alt || 'Formation'} 
                     class="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
                   />
                 {:else}
                   <div class="w-full h-full bg-gray-300 flex items-center justify-center">
@@ -187,9 +193,11 @@
               <figure class="h-full flex-1">
                 {#if data.agirAvecNou?.imageBNVole?.url}
                   <img 
-                    src={data.agirAvecNou.imageBNVole.url} 
+                    src={data.agirAvecNou.imageBNVole.url || ''} 
                     alt={data.agirAvecNou.imageBNVole.alt || 'Devenir volontaire'} 
                     class="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
                   />
                 {:else}
                   <div class="w-full h-full bg-gray-300 flex items-center justify-center">
@@ -240,9 +248,11 @@
               <figure class="h-full flex-1 order-1 md:order-2">
                 {#if data.agirAvecNou?.imageDon?.url}
                   <img 
-                    src={data.agirAvecNou.imageDon.url} 
+                    src={data.agirAvecNou.imageDon.url || ''} 
                     alt={data.agirAvecNou.imageDon.alt || 'Faire un don'} 
                     class="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
                   />
                 {:else}
                   <div class="w-full h-full bg-gray-300 flex items-center justify-center">

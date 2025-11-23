@@ -2,14 +2,12 @@
   import type { PageData } from './$types';
   import Footer from '$lib/components/Footer.svelte';
   import Navbar from '$lib/components/Navbar.svelte';
-
+  import SEO from '$lib/components/SEO.svelte';
+  import { pageSEOConfigs } from '$lib/seo';
   export let data: PageData;
 </script>
 
-<svelte:head>
-  <title>Nos projets - INTERRA</title>
-  <meta name="description" content="Découvrez nos projets et nos initiatives." />
-</svelte:head>
+<SEO config={pageSEOConfigs['/nos-projets']} />
 
 <div class="min-h-screen flex flex-col h-screen">
   <section class="fullheader w-12/12 m-auto fixed bg-white z-50 font-sans">
@@ -28,7 +26,7 @@
             <div class="flex flex-col gap-10 md:grid grid-cols-2">
               <figure>
                 {#if data.nosProjet?.imageDeLaPage?.url}
-                  <img src={data.nosProjet.imageDeLaPage.url} alt={data.nosProjet.imageDeLaPage.alt || 'Image projet'} class="" />
+                  <img src={data.nosProjet.imageDeLaPage.url || ''} alt={data.nosProjet.imageDeLaPage.alt || 'Image projet'} class="" />
                 {:else}
                   <div class="text-center p-8 bg-gray-100">
                     <p class="text-red-500">Erreur : Image projet non disponible</p>

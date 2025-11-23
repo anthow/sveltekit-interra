@@ -1,18 +1,8 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
   import { goto } from '$app/navigation';
-  
-  let menuData: any = null;
+  import { menuContent } from '$lib/content/menu';
+  const menuData = menuContent;
   let navbarOpen = false;
-  
-  onMount(async () => {
-    try {
-      const response = await fetch('/api/menu');
-      menuData = await response.json();
-    } catch (error) {
-      console.error('Erreur lors du chargement du menu:', error);
-    }
-  });
 </script>
 
 <header class="w-10/12 m-auto">
@@ -20,9 +10,9 @@
          <!-- Logo -->
          <a href="/" class="flex items-center">
            {#if menuData?.menu?.imageLogo}
-             <img src={menuData.menu.imageLogo.url} alt={menuData.menu.imageLogo.alt} class="w-[120px] h-auto" />
+             <img src={menuData.menu.imageLogo.url || ''} alt={menuData.menu.imageLogo.alt} class="w-[120px] h-auto" loading="eager" decoding="async" fetchpriority="high" />
            {:else}
-             <img src="/interra-logo.png" alt="Interra Logo" class="w-[120px] h-auto" />
+             <img src="/interra-logo.png" alt="Interra Logo" class="w-[120px] h-auto" loading="eager" decoding="async" fetchpriority="high" />
            {/if}
          </a>
 
@@ -48,26 +38,26 @@
                <!-- Prix du Mérite wallon -->
                <li class="flex flex-row md:mr-2 gap-2 items-center">
                  {#if menuData?.menu?.imageWallonie}
-                   <img src={menuData.menu.imageWallonie.url} alt={menuData.menu.imageWallonie.alt} class="w-[40px] h-auto" />
+                   <img src={menuData.menu.imageWallonie.url || ''} alt={menuData.menu.imageWallonie.alt} class="w-[40px] h-auto" loading="lazy" decoding="async" />
                  {:else}
-                   <img src="/wallonie-logo.png" alt="Prix du Mérite wallon" class="w-[40px] h-auto" />
+                   <img src="/wallonie-logo.png" alt="Prix du Mérite wallon" class="w-[40px] h-auto" loading="lazy" decoding="async" />
                  {/if}
                  <p class="font-black">Prix du Mérite wallon 2022</p>
                </li>
       
       <!-- Boutons d'action -->
         <li class="text-center mb-2 md:mb-0">
-          <a href="/campagne-2025" class="text-white bg-vert-interra font-black p-1 px-2 rounded hover:bg-white hover:text-vert-interra hover:border-vert-interra border">
+          <a href="/campagne-2025" class="text-white bg-vert-interra font-black p-1 px-2 rounded hover:bg-white hover:text-vert-interra hover:border-vert-interra border whitespace-nowrap inline-block">
           Soutenez-nous !
         </a>
         </li>
         <li class="text-center mb-2 md:mb-0">
-          <a href="/agir-avec-nous/#volontaire" class="text-white bg-orange-interra font-black p-1 px-2 rounded hover:bg-white hover:text-orange-interra hover:border-orange-interra border">
+          <a href="/agir-avec-nous/#volontaire" class="text-white bg-orange-interra font-black p-1 px-2 rounded hover:bg-white hover:text-orange-interra hover:border-orange-interra border whitespace-nowrap inline-block">
           Devenir Volontaire
         </a>
         </li>
         <li class="text-center mb-2 md:mb-0">
-          <a href="/une-histoire-dans-l-assiette" class="text-white bg-jaune-interra font-black p-1 px-2 rounded hover:bg-white hover:text-jaune-interra hover:border-jaune-interra border">
+          <a href="/une-histoire-dans-l-assiette" class="text-white bg-jaune-interra font-black p-1 px-2 rounded hover:bg-white hover:text-jaune-interra hover:border-jaune-interra border whitespace-nowrap inline-block">
           Une histoire dans l'assiette
         </a>
         </li>

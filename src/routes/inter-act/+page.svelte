@@ -4,7 +4,6 @@
   import Navbar from '$lib/components/Navbar.svelte';
   import SEO from '$lib/components/SEO.svelte';
   import { pageSEOConfigs } from '$lib/seo';
-
   export let data: PageData;
 </script>
 
@@ -37,6 +36,19 @@
                 <p class="text-red-500">Erreur : Introduction non disponible</p>
               {/if}
             </div>
+            
+            <!-- Image Programme du mois -->
+            {#if data.interAct?.imageProgrameDuMois?.url}
+              <div class="w-10/12 px-3 m-auto mb-20">
+                <figure class="w-full">
+                  <img 
+                    src={data.interAct.imageProgrameDuMois.url || ''} 
+                    alt={data.interAct.imageProgrameDuMois.alt || "Programme du mois"} 
+                    class="w-full h-auto"
+                  />
+                </figure>
+              </div>
+            {/if}
             
           </article>
         </div>

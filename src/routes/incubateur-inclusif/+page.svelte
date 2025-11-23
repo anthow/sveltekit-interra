@@ -2,14 +2,12 @@
   import type { PageData } from './$types';
   import Footer from '$lib/components/Footer.svelte';
   import Navbar from '$lib/components/Navbar.svelte';
-
+  import SEO from '$lib/components/SEO.svelte';
+  import { pageSEOConfigs } from '$lib/seo';
   export let data: PageData;
 </script>
 
-<svelte:head>
-  <title>Incubateur Inclusif - INTERRA</title>
-  <meta name="description" content="Découvrez notre incubateur inclusif." />
-</svelte:head>
+<SEO config={pageSEOConfigs['/incubateur-inclusif']} />
 
 <div class="min-h-screen flex flex-col h-screen">
   <section class="fullheader w-12/12 m-auto fixed bg-white z-50 font-sans">
@@ -31,7 +29,7 @@
           <section class="flex flex-col md:flex-row mb-10 justify-center md:w-9/12 m-auto gap-x-10 gap-y-10 md:gap-y-20">
             <figure class="md:w-1/2">
               {#if data.incubateurInclusif?.image?.url}
-                <img src={data.incubateurInclusif.image.url} alt={data.incubateurInclusif.image.alt || 'Image incubateur'} class="" />
+                <img src={data.incubateurInclusif.image.url || ''} alt={data.incubateurInclusif.image.alt || 'Image incubateur'} class="" />
               {:else}
                 <div class="text-center p-8 bg-gray-100">
                   <p class="text-red-500">Erreur : Image incubateur non disponible</p>

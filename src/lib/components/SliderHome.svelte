@@ -42,7 +42,7 @@
     <div class="slider-wrapper relative">
       {#each images as image, index}
         <div class="slide {index === currentSlide ? 'active' : ''}">
-          <img src={image.url} alt={image.alt} class="w-full h-auto" />
+          <img src={image.url || ''} alt={image.alt} class="w-full h-auto" loading={index === 0 ? 'eager' : 'lazy'} decoding="async" fetchpriority={index === 0 ? 'high' : 'auto'} />
         </div>
       {/each}
       

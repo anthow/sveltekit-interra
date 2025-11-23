@@ -1,9 +1,13 @@
 import { executeQuery } from '@datocms/cda-client';
-import { DATOCMS_READONLY_TOKEN } from '$env/static/private';
 
 export const performRequest = async (query, variables = {}) => {
+  const token = process.env.DATOCMS_READONLY_TOKEN;
+  if (!token) {
+    throw new Error('DATOCMS_READONLY_TOKEN is not defined');
+  }
+  
   return await executeQuery(query, {
     variables,
-    token: DATOCMS_READONLY_TOKEN,
+    token,
   });
 };

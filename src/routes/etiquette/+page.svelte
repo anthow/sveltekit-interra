@@ -2,14 +2,12 @@
   import type { PageData } from './$types';
   import Footer from '$lib/components/Footer.svelte';
   import Navbar from '$lib/components/Navbar.svelte';
-
+  import SEO from '$lib/components/SEO.svelte';
+  import { pageSEOConfigs } from '$lib/seo';
   export let data: PageData;
 </script>
 
-<svelte:head>
-  <title>Étiquette - INTERRA</title>
-  <meta name="description" content="Découvrez notre étiquette et nos valeurs." />
-</svelte:head>
+<SEO config={pageSEOConfigs['/etiquette']} />
 
 <div class="min-h-screen flex flex-col h-screen">
   <section class="fullheader w-12/12 m-auto fixed bg-white z-50 font-sans">
@@ -31,7 +29,7 @@
           <div class="flex flex-x-2 mb-20 w-12/12 justify-center m-auto">
             <figure>
               {#if data.accueil?.imageEtiquetteUn?.url}
-                <img src={data.accueil.imageEtiquetteUn.url} alt={data.accueil.imageEtiquetteUn.alt || 'Image étiquette'} class="" />
+                <img src={data.accueil.imageEtiquetteUn.url || ''} alt={data.accueil.imageEtiquetteUn.alt || 'Image étiquette'} class="" />
               {:else}
                 <div class="text-center p-8 bg-gray-100">
                   <p class="text-red-500">Erreur : Image étiquette non disponible</p>

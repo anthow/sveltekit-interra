@@ -4,7 +4,6 @@
   import Navbar from '$lib/components/Navbar.svelte';
   import SEO from '$lib/components/SEO.svelte';
   import { pageSEOConfigs } from '$lib/seo';
-
   export let data: PageData;
 </script>
 
@@ -32,7 +31,7 @@
               <figure class="md:w-1/2">
                 {#if data.incubateurInclusif?.image?.url}
                   <img 
-                    src={data.incubateurInclusif.image.url} 
+                    src={data.incubateurInclusif.image.url || ''} 
                     alt={data.incubateurInclusif.image.alt || 'InterLab'} 
                     class="w-full h-auto"
                   />

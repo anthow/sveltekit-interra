@@ -4,7 +4,6 @@
   import Navbar from '$lib/components/Navbar.svelte';
   import SEO from '$lib/components/SEO.svelte';
   import { pageSEOConfigs } from '$lib/seo';
-
   export let data: PageData;
 </script>
 
@@ -33,7 +32,7 @@
             <section class="md:grid grid-cols-2 md:space-x-10 mb-10">
               <figure class="row-span-2">
                 {#if data.decouvrirInterra?.imageAdn?.url}
-                  <img src={data.decouvrirInterra.imageAdn.url} alt={data.decouvrirInterra.imageAdn.alt || 'ADN Interra'} class="h-min mb-5 md:mb-0 w-full" />
+                  <img src={data.decouvrirInterra.imageAdn.url || ''} alt={data.decouvrirInterra.imageAdn.alt || 'ADN Interra'} class="h-min mb-5 md:mb-0 w-full" />
                 {:else}
                   <div class="text-center p-8 bg-gray-100">
                     <p class="text-red-500">Erreur : Image ADN non disponible</p>
@@ -119,7 +118,7 @@
 
               <figure class="order-1 md:-order-2 mb-5 md:mb-0">
                 {#if data.decouvrirInterra?.imageLien?.url}
-                  <img src={data.decouvrirInterra.imageLien.url} alt={data.decouvrirInterra.imageLien.alt || 'Lien Interra'} class="h-full mt-10 md:mt-0 w-full" />
+                  <img src={data.decouvrirInterra.imageLien.url || ''} alt={data.decouvrirInterra.imageLien.alt || 'Lien Interra'} class="h-full mt-10 md:mt-0 w-full" />
                 {:else}
                   <div class="text-center p-8 bg-gray-100">
                     <p class="text-red-500">Erreur : Image lien non disponible</p>
@@ -141,7 +140,7 @@
             <section class="md:grid grid-cols-2 w-10/12 m-auto gap-x-10 mb-10">
               <figure>
                 {#if data.decouvrirInterra?.imageMission?.url}
-                  <img src={data.decouvrirInterra.imageMission.url} alt={data.decouvrirInterra.imageMission.alt || 'Nos Missions'} class="w-full h-auto" />
+                  <img src={data.decouvrirInterra.imageMission.url || ''} alt={data.decouvrirInterra.imageMission.alt || 'Nos Missions'} class="w-full h-auto" />
                 {:else}
                   <div class="text-center p-8 bg-gray-100">
                     <p class="text-red-500">Erreur : Image mission non disponible</p>
@@ -166,14 +165,14 @@
             <section class="md:grid grid-cols-2 grid-rows-2 gap-x-10 mb-10">
               <figure class="row-span-2 mb-10 md:mb-0 h-full">
                 {#if data.decouvrirInterra?.imageValeurs?.url}
-                  <img src={data.decouvrirInterra.imageValeurs.url} alt={data.decouvrirInterra.imageValeurs.alt || 'Nos Valeurs'} class="h-full w-full object-cover" />
+                  <img src={data.decouvrirInterra.imageValeurs.url || ''} alt={data.decouvrirInterra.imageValeurs.alt || 'Nos Valeurs'} class="h-full w-full object-cover" />
                 {:else}
                   <div class="text-center p-8 bg-gray-100">
                     <p class="text-red-500">Erreur : Image valeurs non disponible</p>
                   </div>
                 {/if}
               </figure>
-              <div class="p-1 flex flex-col space-y-2 bg-orange-interra text-center font-black text-white place-content-center mb-10">
+              <div class="p-1 flex flex-col space-y-2 bg-orange-interra text-center font-normal text-white place-content-center mb-10">
                 {#if data.decouvrirInterra?.listeValeurs}
                   {@html data.decouvrirInterra.listeValeurs}
                 {:else}
@@ -231,7 +230,7 @@
                       <li class="place-self-center">
                         <a href={(image.customData && image.customData.url) ? image.customData.url : image.url} rel="noreferrer" target="_blank">
                           <figure class="md:w-12/12 w-1/2 m-auto mb-8 md:m-0">
-                            <img src={image.url} alt={image.alt || 'Partenaire Interra'} class="w-full" />
+                            <img src={image.url || ''} alt={image.alt || 'Partenaire Interra'} class="w-full" />
                           </figure>
                         </a>
                       </li>

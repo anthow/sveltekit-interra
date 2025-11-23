@@ -1,7 +1,9 @@
 <script lang="ts">
+  
   export let data: any = null;
   
-  $: informations = data?.allInformation || [];
+  // Filtrer pour n'afficher que les informations où horsLigneEnLigne est true
+  $: informations = (data?.allInformation || []).filter((info: any) => info.horsLigneEnLigne === true);
 </script>
 
 {#if informations.length > 0}
@@ -21,7 +23,7 @@
         
         <figure class="mb-10 md:mb-0">
           {#if info.image?.url}
-            <img src={info.image.url} alt={info.image.alt || 'Image non disponible'} class="w-full h-auto" />
+            <img src={info.image.url || ''} alt={info.image.alt || 'Image non disponible'} class="w-full h-auto" loading="lazy" decoding="async" />
           {:else}
             <div class="text-center p-8 bg-gray-100">
               <p class="text-red-500">Erreur : Image non disponible</p>
@@ -35,16 +37,8 @@
               {info.texteButton}
             </button>
           </a>
-        {:else}
-          <div class="text-center p-4 bg-gray-100">
-            <p class="text-red-500">Erreur : Bouton non disponible</p>
-          </div>
         {/if}
       </article>
     {/each}
-  </div>
-{:else}
-  <div class="text-center p-8 bg-gray-100">
-    <p class="text-red-500">Erreur : Aucune information disponible</p>
   </div>
 {/if}

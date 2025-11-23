@@ -2,14 +2,12 @@
   import type { PageData } from './$types';
   import Footer from '$lib/components/Footer.svelte';
   import Navbar from '$lib/components/Navbar.svelte';
-
+  import SEO from '$lib/components/SEO.svelte';
+  import { pageSEOConfigs } from '$lib/seo';
   export let data: PageData;
 </script>
 
-<svelte:head>
-  <title>Presse - INTERRA</title>
-  <meta name="description" content="Articles de presse et médias parlant d'INTERRA." />
-</svelte:head>
+<SEO config={pageSEOConfigs['/presse']} />
 
 <div class="min-h-screen flex flex-col h-screen">
   <section class="fullheader w-12/12 m-auto fixed bg-white z-50 font-sans">
@@ -32,7 +30,7 @@
             <div class="flex flex-col md:grid grid-cols-2 space-x-10 w-12/12">
               <figure class="m-auto">
                 {#if data.presse?.logoMedia?.url}
-                  <img src={data.presse.logoMedia.url} alt={data.presse.logoMedia.alt || 'Logo média'} class="mb-10 m-auto md:justify-self-center" />
+                  <img src={data.presse.logoMedia.url || ''} alt={data.presse.logoMedia.alt || 'Logo média'} class="mb-10 m-auto md:justify-self-center" />
                 {:else}
                   <p>Logo non disponible</p>
                 {/if}

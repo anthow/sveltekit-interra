@@ -1,16 +1,6 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
-  
-  let footerData: any = null;
-  
-  onMount(async () => {
-    try {
-      const response = await fetch('/api/footer');
-      footerData = await response.json();
-    } catch (error) {
-      console.error('Erreur lors du chargement du footer:', error);
-    }
-  });
+  import { footerContent } from '$lib/content/footer';
+  const footerData = footerContent;
 </script>
 
 <footer class="mt-20  ">
@@ -22,14 +12,20 @@
     
     <!-- Slider des soutiens -->
     <ul class="flex flex-col flex-wrap md:grid grid-cols-6 md:gap-x-10 gap-y-5 md:gap-y-10">
-      {#if footerData?.footer?.soutiens}
+      {#if footerData?.footer?.soutiens && footerData.footer.soutiens.length > 0}
         {#each footerData.footer.soutiens as soutien}
           <li class="place-self-center">
-            <a href={soutien.customData?.url} target="_blank" rel="noreferrer">
+            {#if soutien.customData?.url}
+              <a href={soutien.customData.url} target="_blank" rel="noreferrer">
+                <figure class="md:w-12/12 w-1/2 m-auto mb-8 md:m-0">
+                  <img src={soutien.url || ''} alt={soutien.alt} class="w-full" loading="lazy" decoding="async" />
+                </figure>
+              </a>
+            {:else}
               <figure class="md:w-12/12 w-1/2 m-auto mb-8 md:m-0">
-                <img src={soutien.url} alt={soutien.alt} class="w-full" />
+                <img src={soutien.url || ''} alt={soutien.alt} class="w-full" />
               </figure>
-            </a>
+            {/if}
           </li>
         {/each}
       {/if}
@@ -65,21 +61,21 @@
           <li>
             <a href="https://www.facebook.com/InterraCult" target="_blank" rel="noreferrer">
               <figure>
-                <img src="/images/facebook-header.png" alt="Page Facebook d'Interra" class="w-8 h-8" />
+                <img src="/images/facebook-header.png" alt="Page Facebook d'Interra" class="w-8 h-8" loading="lazy" decoding="async" />
               </figure>
             </a>
           </li>
           <li>
             <a href="https://www.instagram.com/_interra/?hl=fr" target="_blank" rel="noreferrer">
               <figure>
-                <img src="/images/instagram.png" alt="Page Instagram d'Interra" class="w-8 h-8" />
+                <img src="/images/instagram.png" alt="Page Instagram d'Interra" class="w-8 h-8" loading="lazy" decoding="async" />
               </figure>
             </a>
           </li>
           <li>
             <a href="https://www.linkedin.com/company/interra-culturalbridges/" target="_blank" rel="noreferrer">
               <figure>
-                <img src="/images/linkedin.png" alt="Page LinkedIn d'Interra" class="w-8 h-8" />
+                <img src="/images/linkedin.png" alt="Page LinkedIn d'Interra" class="w-8 h-8" loading="lazy" decoding="async" />
               </figure>
             </a>
           </li>

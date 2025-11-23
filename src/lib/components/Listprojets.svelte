@@ -10,9 +10,11 @@
       <a href="/inter-act">
         {#if data?.interAct?.imageListe?.url}
           <img 
-            src={data.interAct.imageListe.url} 
+            src={data.interAct.imageListe.url || ''} 
             alt={data.interAct.imageListe.alt || 'InterAct'} 
             class="mb-5 w-full h-[400px] object-cover"
+            loading="lazy"
+            decoding="async"
           />
         {:else}
           <div class="mb-5 w-full h-[400px] bg-gray-200 flex items-center justify-center">
@@ -37,9 +39,11 @@
       <a href="/duo2change">
         {#if data?.duoLangue?.imageListeProjets?.url}
           <img 
-            src={data.duoLangue.imageListeProjets.url} 
+            src={data.duoLangue.imageListeProjets.url || ''} 
             alt={data.duoLangue.imageListeProjets.alt || 'Duo2Change'} 
             class="mb-5 w-full h-[400px] object-cover"
+            loading="lazy"
+            decoding="async"
           />
         {:else}
           <div class="mb-5 w-full h-[400px] bg-gray-200 flex items-center justify-center">
@@ -64,9 +68,11 @@
       <a href="/incubateur-inclusif">
         {#if data?.incubateurInclusif?.imageListeProjets?.url}
           <img 
-            src={data.incubateurInclusif.imageListeProjets.url} 
+            src={data.incubateurInclusif.imageListeProjets.url || ''} 
             alt={data.incubateurInclusif.imageListeProjets.alt || 'InterLab'} 
             class="mb-5 w-full h-[400px] object-cover"
+            loading="lazy"
+            decoding="async"
           />
         {:else}
           <div class="mb-5 w-full h-[400px] bg-gray-200 flex items-center justify-center">
@@ -91,9 +97,11 @@
       <a href="/formation-interculturelle">
         {#if data?.formationInterculturelle?.imageListeProjets?.url}
           <img 
-            src={data.formationInterculturelle.imageListeProjets.url} 
+            src={data.formationInterculturelle.imageListeProjets.url || ''} 
             alt={data.formationInterculturelle.imageListeProjets.alt || 'Com\'Together'} 
             class="mb-5 w-full h-[400px] object-cover"
+            loading="lazy"
+            decoding="async"
           />
         {:else}
           <div class="mb-5 w-full h-[400px] bg-gray-200 flex items-center justify-center">

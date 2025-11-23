@@ -2,14 +2,12 @@
   import type { PageData } from './$types';
   import Footer from '$lib/components/Footer.svelte';
   import Navbar from '$lib/components/Navbar.svelte';
-
+  import SEO from '$lib/components/SEO.svelte';
+  import { pageSEOConfigs } from '$lib/seo';
   export let data: PageData;
 </script>
 
-<svelte:head>
-  <title>Histoires - INTERRA</title>
-  <meta name="description" content="Découvrez les histoires de nos membres." />
-</svelte:head>
+<SEO config={pageSEOConfigs['/histoires']} />
 
 <div class="min-h-screen flex flex-col h-screen">
   <section class="fullheader w-12/12 m-auto fixed bg-white z-50 font-sans">
@@ -29,7 +27,7 @@
               <div class="flex flex-col md:grid grid-cols-2 gap-x-10 gap-y-10 md:gap-y-20">
                 <figure class="md:relative md:bottom-20">
                   {#if data.histoireDe?.imageAccueil?.url}
-                    <img src={data.histoireDe.imageAccueil.url} alt={data.histoireDe.imageAccueil.alt || 'Image histoire'} class="w-full h-auto" />
+                    <img src={data.histoireDe.imageAccueil.url || ''} alt={data.histoireDe.imageAccueil.alt || 'Image histoire'} class="w-full h-auto" />
                   {:else}
                     <div class="text-center p-8 bg-gray-100">
                       <p class="text-red-500">Erreur : Image histoire non disponible</p>

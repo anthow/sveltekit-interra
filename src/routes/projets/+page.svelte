@@ -3,14 +3,12 @@
   import Footer from '$lib/components/Footer.svelte';
   import Navbar from '$lib/components/Navbar.svelte';
   import Listprojets from '$lib/components/Listprojets.svelte';
-
+  import SEO from '$lib/components/SEO.svelte';
+  import { pageSEOConfigs } from '$lib/seo';
   export let data: PageData;
 </script>
 
-<svelte:head>
-  <title>Projets - INTERRA</title>
-  <meta name="description" content="Découvrez tous les projets d'INTERRA pour favoriser l'inclusion et créer du lien entre les personnes." />
-</svelte:head>
+<SEO config={pageSEOConfigs['/projets']} />
 
 <div class="min-h-screen flex flex-col h-screen">
   <section class="fullheader w-12/12 m-auto fixed bg-white z-50 font-sans">
@@ -31,9 +29,11 @@
                 <figure class="">
                   {#if data.nosProjet?.imageDeLaPage?.url}
                     <img 
-                      src={data.nosProjet.imageDeLaPage.url} 
+                      src={data.nosProjet.imageDeLaPage.url || ''} 
                       alt={data.nosProjet.imageDeLaPage.alt || 'Nos projets'} 
                       class="w-full h-auto"
+                      loading="lazy"
+                      decoding="async"
                     />
                   {:else}
                     <div class="w-full h-64 bg-gray-200 flex items-center justify-center">

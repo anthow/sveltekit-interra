@@ -260,5 +260,30 @@ export const pageSEOConfigs: Record<string, SEOConfig> = {
     title: 'Contact INTERRA - Nous Contacter',
     description: 'Contactez INTERRA pour plus d\'informations sur nos projets, formations ou pour nous rejoindre.',
     keywords: ['contact', 'information', 'rejoindre', 'aide']
+  },
+  '/incubateur-inclusif': {
+    title: 'InterLab - Incubateur Inclusif INTERRA',
+    description: 'Découvrez InterLab, notre incubateur inclusif qui accompagne les personnes nouvellement arrivées dans la création d\'organisations et d\'entreprises.',
+    keywords: ['incubateur', 'interlab', 'entrepreneuriat', 'inclusion', 'création entreprise']
+  },
+  '/histoires': {
+    title: 'Histoires d\'Intégration - Témoignages INTERRA',
+    description: 'Découvrez les histoires inspirantes de personnes qui ont réussi leur intégration grâce aux projets INTERRA.',
+    keywords: ['témoignages', 'histoires', 'intégration réussie', 'inspiration', 'récits']
+  },
+  '/presse': {
+    title: 'Presse - Articles et Médias INTERRA',
+    description: 'Découvrez les articles de presse et médias qui parlent d\'INTERRA et de nos actions d\'intégration à Liège.',
+    keywords: ['presse', 'médias', 'articles', 'actualité', 'communication']
+  },
+  '/etiquette': {
+    title: 'Étiquette et Valeurs - INTERRA',
+    description: 'Découvrez l\'étiquette et les valeurs qui guident INTERRA dans ses actions d\'intégration et d\'interculturalité.',
+    keywords: ['étiquette', 'valeurs', 'charte', 'principes', 'éthique']
+  },
+  '/nos-projets': {
+    title: 'Nos Projets - INTERRA',
+    description: 'Explorez tous nos projets d\'intégration et d\'interculturalité : Duo2Change, formations, ateliers et bien plus.',
+    keywords: ['projets interra', 'duo2change', 'ateliers', 'activités', 'initiatives']
   }
 };

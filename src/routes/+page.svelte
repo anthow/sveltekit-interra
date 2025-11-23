@@ -49,7 +49,7 @@ export let data: PageData;
           </figure>
           <figure class="order-1 col-span-2 mb-5 md:mb-0 md-order-2 md:hidden">
             {#if data.accueil?.imagesHeader && data.accueil.imagesHeader.length > 0}
-              <img src={data.accueil.imagesHeader[0].url} alt={data.accueil.imagesHeader[0].alt || "Image d'accueil"} class="w-full h-auto" />
+              <img src={data.accueil.imagesHeader[0].url || ''} alt={data.accueil.imagesHeader[0].alt || "Image d'accueil"} class="w-full h-auto" loading="eager" decoding="async" fetchpriority="high" />
             {:else}
               <div class="text-center p-8 bg-gray-100">
                 <p class="text-red-500">Erreur : Image mobile non disponible</p>
@@ -62,7 +62,7 @@ export let data: PageData;
         <section class="bg-vert-interra mt-10">
           <div class="w-10/12 m-auto py-20 md:grid grid-cols-5 gap-x-20">
             {#if data?.accueil?.imagePartieDeux}
-              <img src={data.accueil.imagePartieDeux.url} alt={data.accueil.imagePartieDeux.alt} class="w-full col-span-2" />
+              <img src={data.accueil.imagePartieDeux.url || ''} alt={data.accueil.imagePartieDeux.alt} class="w-full col-span-2" loading="lazy" decoding="async" />
             {:else}
               <div class="col-span-2 text-center p-8 bg-gray-100">
                 <p class="text-red-500">Erreur : Image de la mission non disponible</p>
@@ -102,8 +102,8 @@ export let data: PageData;
           <div class="w-10/12 m-auto">
             <div class="md:grid grid-cols-3 gap-x-5">
               <figure class="md:relative md:bottom-20">
-                {#if data?.accueil?.imageHistoireDe}
-                  <img src={data.accueil.imageHistoireDe.url} alt={data.accueil.imageHistoireDe.alt} class="w-full h-auto" />
+                {#if data?.histoireDe?.imageHistoireDe}
+                  <img src={data.histoireDe.imageHistoireDe.url || ''} alt={data.histoireDe.imageHistoireDe.alt} class="w-full h-auto" loading="lazy" decoding="async" />
                 {:else}
                   <div class="text-center p-8 bg-gray-100">
                     <p class="text-red-500">Erreur : Image histoire non disponible</p>
@@ -119,18 +119,13 @@ export let data: PageData;
                     <p class="text-red-500">Erreur : Texte histoire non disponible</p>
                   {/if}
                 </div>
-                
-                
-                <a href="/histoires" class="w-max m-auto">
-                  <button class="mt-5 mb-10 md:mb-0 text-white bg-orange-interra font-black p-1 px-2 rounded hover:bg-white-interra hover:text-orange-interra hover:bg-white border hover:border-orange-interra">
-                    Voir toutes les histoires
-                  </button>
-                </a>
+              
+              
               </article>
               
               <figure class="md:relative md:bottom-20">
                 {#if data?.histoireDe?.imageAccueil}
-                  <img src={data.histoireDe.imageAccueil.url} alt={data.histoireDe.imageAccueil.alt} class="w-full h-auto" />
+                  <img src={data.histoireDe.imageAccueil.url || ''} alt={data.histoireDe.imageAccueil.alt} class="w-full h-auto" loading="lazy" decoding="async" />
                 {:else}
                   <div class="text-center p-8 bg-gray-100">
                     <p class="text-red-500">Erreur : Image accueil histoire non disponible</p>
@@ -146,7 +141,7 @@ export let data: PageData;
           <h2 class="text-2xl md:text-4xl font-normal text-white text-center my-5 md:mt-0 mb-5">
             Actus / Événements
           </h2>
-          <!-- Contenu des actualités masqué car les actus sont en false -->
+          <Information data={data} />
         </section>
 
         <!-- Section Agir avec nous -->
@@ -226,7 +221,7 @@ export let data: PageData;
           <article>
             <figure class="md:relative mt-10 md:mt-0 m-auto md:bottom-20 right-20 mb-10 md:mb-0 w-10/12 md:w-12/12">
               {#if data?.accueil?.imageAgirAvecNous}
-                <img src={data.accueil.imageAgirAvecNous.url} alt={data.accueil.imageAgirAvecNous.alt} class="order-1 w-full h-auto" />
+                <img src={data.accueil.imageAgirAvecNous.url || ''} alt={data.accueil.imageAgirAvecNous.alt} class="order-1 w-full h-auto" loading="lazy" decoding="async" />
               {:else}
                 <div class="text-center p-8 bg-gray-100">
                   <p class="text-red-500">Erreur : Image agir avec nous non disponible</p>

@@ -2,14 +2,12 @@
   import type { PageData } from './$types';
   import Footer from '$lib/components/Footer.svelte';
   import Navbar from '$lib/components/Navbar.svelte';
-
+  import SEO from '$lib/components/SEO.svelte';
+  import { pageSEOConfigs } from '$lib/seo';
   export let data: PageData;
 </script>
 
-<svelte:head>
-  <title>Formation interculturelle - INTERRA</title>
-  <meta name="description" content="Découvrez notre formation à la communication interculturelle Com'Together pour favoriser le vivre ensemble." />
-</svelte:head>
+<SEO config={pageSEOConfigs['/formation-interculturelle']} />
 
 <div class="min-h-screen flex flex-col h-screen">
   <section class="fullheader w-12/12 m-auto fixed bg-white z-50 font-sans">
@@ -46,9 +44,11 @@
               <figure class="order-1 md:order-2">
                 {#if data.formationInterculturelle?.imageUneOrganiser?.url}
                   <img 
-                    src={data.formationInterculturelle.imageUneOrganiser.url} 
+                    src={data.formationInterculturelle.imageUneOrganiser.url || ''} 
                     alt={data.formationInterculturelle.imageUneOrganiser.alt || 'Formation interculturelle'} 
                     class="w-full h-auto"
+                    loading="lazy"
+                    decoding="async"
                   />
                 {:else}
                   <div class="w-full h-64 bg-gray-200 flex items-center justify-center">
@@ -73,7 +73,7 @@
                 <!-- Image commentée dans Gatsby - on la laisse vide comme dans l'original -->
                 <!-- {#if data.formationInterculturelle?.imageDeuxOrganiser?.url}
                   <img 
-                    src={data.formationInterculturelle.imageDeuxOrganiser.url} 
+                    src={data.formationInterculturelle.imageDeuxOrganiser.url || ''} 
                     alt={data.formationInterculturelle.imageDeuxOrganiser.alt || 'Formation interculturelle'} 
                     class="w-full h-auto"
                   />
@@ -95,9 +95,11 @@
               <figure class="h-max">
                 {#if data.formationInterculturelle?.imageTroisOrganiser?.url}
                   <img 
-                    src={data.formationInterculturelle.imageTroisOrganiser.url} 
+                    src={data.formationInterculturelle.imageTroisOrganiser.url || ''} 
                     alt={data.formationInterculturelle.imageTroisOrganiser.alt || 'Objectifs formation'} 
                     class="min-h-full justify-self-end w-full h-auto"
+                    loading="lazy"
+                    decoding="async"
                   />
                 {:else}
                   <div class="w-full h-64 bg-gray-300 flex items-center justify-center">
