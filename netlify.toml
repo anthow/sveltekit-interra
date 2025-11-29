@@ -1,9 +1,9 @@
 [build]
 command = "npm run build"
-publish = ".netlify/publish"
+publish = "build"
 
-[functions]
-node_bundler = "esbuild"
+# Note: Le site est maintenant entièrement statique (headless)
+# Aucune fonction serveur n'est nécessaire
 
 # Configuration pour ignorer le scan de secrets pour AIRTABLE_BASE_ID (ID public, pas un secret)
 [build.environment]

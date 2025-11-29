@@ -1,5 +1,7 @@
-import { json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
+
+// Configuration pour le prerendering - site entièrement statique
+export const prerender = true;
 
 export const GET: RequestHandler = async () => {
   const baseUrl = 'https://interra.be';
@@ -149,3 +151,4 @@ ${[...staticPages, ...agirAvecNousPages].map(page => `  <url>
     }
   });
 };
+
