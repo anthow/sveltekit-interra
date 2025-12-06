@@ -1,4 +1,5 @@
 import type { PageLoad } from './$types';
+<<<<<<< Updated upstream
 
 export const load: PageLoad = async ({ fetch }) => {
   try {
@@ -13,3 +14,13 @@ export const load: PageLoad = async ({ fetch }) => {
     return { agirAvecNou: null };
   }
 };
+=======
+import { agirAvecNousContent } from '$lib/content/agir-avec-nous';
+
+export const load: PageLoad = async () => {
+  return {
+    agirAvecNou: agirAvecNousContent.agirAvecNou
+  };
+};
+
+>>>>>>> Stashed changes

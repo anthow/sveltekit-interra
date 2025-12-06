@@ -6,4 +6,7 @@ export const load: PageLoad = async () => {
     agirAvecNou: agirAvecNousContent.agirAvecNou
   };
 };
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes

@@ -10,4 +10,7 @@ export const load: PageLoad = async () => {
     formationInterculturelle: projetsContent.formationInterculturelle
   };
 };
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
