@@ -1,8 +1,8 @@
 import type { PageLoad } from './$types';
+import { presseContent } from '$lib/content/presse';
 
 export const load: PageLoad = async () => {
-  // Contenu statique - à remplir avec les données d'Airtable si nécessaire
   return {
-    presse: null
+    presse: presseContent.presse
   };
 };

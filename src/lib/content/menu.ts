@@ -2,13 +2,13 @@ export const menuContent = {
   menu: {
     id: 141104585,
     imageLogo: {
-      url: "/interra-logo.png",
-      alt: "logointerra-1.jpg"
-    },
+  url: "/images/1682074138-logointerra-1.jpg",
+  alt: ""
+},
     imageWallonie: {
-      url: "/wallonie-logo.png",
-      alt: "1200px-logo_wallonie-svg-749x1024.png"
-    },
+  url: "/images/1682074239-1200px-logo_wallonie-svg-749x1024.png",
+  alt: ""
+},
     menuPrincipalUnAccueil: "Accueil",
     menuPrincipalDeuxDecouvrirInterra: "Découvrir Interra",
     menuPrincipalTroisProjets: "Projets",

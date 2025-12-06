@@ -7,25 +7,35 @@ export type InterActContent = {
       url: string;
       alt: string;
     };
-    imageProgrameDuMois: {
-      url: string;
-      alt: string;
-    };
   };
 };
 
 export const interActContent: InterActContent = {
   interAct: {
     titre: "InterAct",
-    introduction: "InterAct a pour objectif de valoriser les passions et le savoir-faire d'une personne nouvellement arrivée ou locale. Pour se faire, chacun·e a la possibilité de proposer une activité qu'il ou elle souhaiterait organiser au sein d'INTERRA.<br><br>Notre rôle est de : <br><br>- Recevoir les personnes désireuses de proposer un atelier. <br>- Les accompagner dans la conception et l'organisation de leur <br>- atelier, les aider à trouver une salle, le matériel, le public...<br>- Réaliser ensemble une évaluation de l'atelier.<br><br>Pour en savoir plus sur InterAct et/ou pour recevoir le programme de chaque semaine :<br>Contactez l'équipe InterAct !  0491 520 520   interact@interra-asbl.be",
-    chapeau: "L'objectif d'InterAct est d'accompagner une personne nouvellement arrivée ou locale dans l'organisation d'un atelier en fonction de son savoir-faire et de sa passion à un groupe de participants mixte (personnes primo-arrivants et locales).<br>",
+    introduction: `<p>InterAct a pour objectif de <strong>valoriser les passions et le savoir-faire d'une personne nouvellement arriv&eacute;e ou locale</strong>. Pour se faire, chacun<span>&middot;e</span> a la possibilit&eacute; de proposer une activit&eacute; qu'il ou elle souhaiterait organiser au sein d'INTERRA.</p>
+<p>Notre r&ocirc;le est de :&nbsp;</p>
+<ul>
+<li>Recevoir les personnes d&eacute;sireuses de proposer un atelier.&nbsp;</li>
+<li>Les accompagner dans la conception et l'organisation de leur atelier, les aider &agrave; trouver une salle, le mat&eacute;riel, le public...</li>
+<li>R&eacute;aliser ensemble une &eacute;valuation de l'atelier.</li>
+</ul>
+<div class="x11i5rnm xat24cr x1mh8g0r x1vvkbs xtlvy1s x126k92a">
+<div dir="auto">
+<div class="x11i5rnm xat24cr x1mh8g0r x1vvkbs xtlvy1s x126k92a">
+<div dir="auto"><span style="font-size: 0.9375rem; letter-spacing: 0px;">Pour en savoir plus sur InterAct et/ou pour recevoir le programme de chaque semaine :</span></div>
+</div>
+</div>
+</div>
+<div class="x11i5rnm xat24cr x1mh8g0r x1vvkbs xtlvy1s x126k92a">
+<div dir="auto">Contactez l'&eacute;quipe InterAct ! <span class="html-span xexx8yu x4uap5 x18d9i69 xkhd6sd x1hl2dhg x16tdsg8 x1vvkbs x3nfvp2 x1j61x8r x1fcty0u xdj266r xat24cr xgzva0m xhhsvwb xxymvpz xlup9mm x1kky2od"><img height="16" width="16" alt="📱" class="xz74otr x168nmei x13lgxp2 x5pf9jr xo71vjh" referrerpolicy="origin-when-cross-origin" src="https://static.xx.fbcdn.net/images/emoji.php/v9/t57/1/16/1f4f1.png" /></span> 0491 520 520&nbsp; <span class="html-span xexx8yu x4uap5 x18d9i69 xkhd6sd x1hl2dhg x16tdsg8 x1vvkbs x3nfvp2 x1j61x8r x1fcty0u xdj266r xat24cr xgzva0m xhhsvwb xxymvpz xlup9mm x1kky2od"><img height="16" width="16" alt="📧" class="xz74otr x168nmei x13lgxp2 x5pf9jr xo71vjh" referrerpolicy="origin-when-cross-origin" src="https://static.xx.fbcdn.net/images/emoji.php/v9/tbe/1/16/1f4e7.png" /></span> interact@interra-asbl.be</div>
+<div dir="auto"><strong>PROGRAMME DU MOIS&nbsp;&nbsp;</strong><strong></strong></div>
+<div dir="auto"><img src="https://www.datocms-assets.com/56205/1764672586-whatsapp-image-2025-12-01-a-09-14-46_f4e05550.jpg" /></div>
+</div>`,
+    chapeau: `<p>L'objectif d'InterAct est d'<strong>accompagner une personne nouvellement arriv&eacute;e ou locale dans l'organisation d'un atelier</strong> en fonction de son savoir-faire et de sa passion &agrave; un groupe de participants mixte (personnes primo-arrivants et locales).</p>`,
     imageListe: {
-      url: "/images/92afe8ff-57f9-4482-8fc1-a7e100f93c23.jpg",
-      alt: "92afe8ff-57f9-4482-8fc1-a7e100f93c23.jpg"
-    },
-    imageProgrameDuMois: {
-      url: "/images/agenda-novembre-2025.png",
-      alt: "agenda-novembre-2025.png"
-    }
+  url: "/images/1654172146-92afe8ff-57f9-4482-8fc1-a7e100f93c23.jpg",
+  alt: ""
+}
   }
 };

@@ -4,6 +4,7 @@ import { defineConfig } from 'vite';
 export default defineConfig({
 	plugins: [sveltekit()],
 	build: {
+		sourcemap: false, // Désactive les source maps en production pour éviter les erreurs 404
 		rollupOptions: {
 			output: {
 				manualChunks: {
@@ -14,5 +15,8 @@ export default defineConfig({
 	},
 	optimizeDeps: {
 		include: ['svelte']
+	},
+	ssr: {
+		noExternal: ['@datocms/cda-client']
 	}
 });

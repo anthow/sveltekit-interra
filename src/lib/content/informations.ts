@@ -17,6 +17,5 @@ export type InformationsContent = {
 };
 
 export const informationsContent: InformationsContent = {
-  allInformation: [
-  ]
+  allInformation: []
 };
