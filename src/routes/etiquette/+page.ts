@@ -1,22 +1,13 @@
 import type { PageLoad } from './$types';
+import { homepageContent } from '$lib/content/homepage';
 
-export const load: PageLoad = async ({ fetch }) => {
-  try {
-    const response = await fetch('/api/homepage');
-    const result = await response.json();
-    
-    if (result.error) {
-      console.error('Erreur API:', result.error);
-      return { 
-        accueil: null 
-      };
+export const load: PageLoad = async () => {
+  return {
+    accueil: {
+      titreTiquette: homepageContent.accueil.titreTiquette,
+      texteTiquette: homepageContent.accueil.texteTiquette,
+      textEtiquetteDeux: homepageContent.accueil.textEtiquetteDeux,
+      imageEtiquetteUn: homepageContent.accueil.imageEtiquetteUn
     }
-    
-    return result;
-  } catch (error) {
-    console.error('Erreur lors du chargement des données:', error);
-    return { 
-      accueil: null 
-    };
-  }
+  };
 };

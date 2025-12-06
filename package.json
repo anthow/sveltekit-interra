@@ -4,6 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "sync-datocms": "node scripts/sync-datocms.mjs",
+    "prebuild": "npm run sync-datocms",
     "build": "svelte-kit sync && vite build",
     "dev": "vite dev",
     "preview": "vite preview",

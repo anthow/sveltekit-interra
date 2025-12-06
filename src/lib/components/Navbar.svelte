@@ -57,24 +57,24 @@
       
       <!-- Boutons d'action -->
         <li class="text-center mb-2 md:mb-0">
-          <a href="/campagne-2025" class="text-white bg-vert-interra font-black p-1 px-2 rounded hover:bg-white hover:text-vert-interra hover:border-vert-interra border">
+          <a href="/campagne-2025" class="text-white bg-vert-interra font-black p-1 px-2 rounded hover:bg-white hover:text-vert-interra hover:border-vert-interra border whitespace-nowrap">
           Soutenez-nous !
         </a>
         </li>
         <li class="text-center mb-2 md:mb-0">
-          <a href="/agir-avec-nous/#volontaire" class="text-white bg-orange-interra font-black p-1 px-2 rounded hover:bg-white hover:text-orange-interra hover:border-orange-interra border">
+          <a href="/agir-avec-nous/#volontaire" class="text-white bg-orange-interra font-black p-1 px-2 rounded hover:bg-white hover:text-orange-interra hover:border-orange-interra border whitespace-nowrap">
           Devenir Volontaire
         </a>
         </li>
         <li class="text-center mb-2 md:mb-0">
-          <a href="/une-histoire-dans-l-assiette" class="text-white bg-jaune-interra font-black p-1 px-2 rounded hover:bg-white hover:text-jaune-interra hover:border-jaune-interra border">
+          <a href="/une-histoire-dans-l-assiette" class="text-white bg-jaune-interra font-black p-1 px-2 rounded hover:bg-white hover:text-jaune-interra hover:border-jaune-interra border whitespace-nowrap">
           Une histoire dans l'assiette
         </a>
         </li>
         
         <!-- Réseaux sociaux -->
         <li class="w-auto pt-1 m-auto">
-          <a href="https://api.whatsapp.com/send?phone=32491520520" target="_blank" rel="noreferrer">
+          <a href="https://api.whatsapp.com/send?phone=32491520520" target="_blank" rel="noreferrer" aria-label="Contactez-nous sur WhatsApp">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 256 258">
               <defs>
                 <linearGradient id="logosWhatsappIcon0" x1="50%" x2="50%" y1="100%" y2="0%">
@@ -93,7 +93,7 @@
           </a>
         </li>
         <li class="w-auto text-center mb-2 md:pt-1 md:mb-0">
-          <a href="https://www.facebook.com/InterraCult" target="_blank" rel="noreferrer">
+          <a href="https://www.facebook.com/InterraCult" target="_blank" rel="noreferrer" aria-label="Suivez-nous sur Facebook">
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 256 256">
               <path fill="#1877F2" d="M256 128C256 57.308 198.692 0 128 0C57.308 0 0 57.307 0 128c0 63.888 46.808 116.843 108 126.445V165H75.5v-37H108V99.8c0-32.08 19.11-49.8 48.347-49.8C170.352 50 185 52.5 185 52.5V84h-16.14C152.958 84 148 93.867 148 103.99V128h35.5l-5.675 37H148v89.445c61.192-9.602 108-62.556 108-126.445"/>
               <path fill="#FFF" d="m177.825 165l5.675-37H148v-24.01C148 93.866 152.959 84 168.86 84H185V52.5S170.352 50 156.347 50C127.11 50 108 67.72 108 99.8V128H75.5v37H108v89.445A128.959 128.959 0 0 0 128 256a128.9 128.9 0 0 0 20-1.555V165h29.825"/>
@@ -101,7 +101,7 @@
           </a>
         </li>
         <li class="w-auto text-center mb-2 md:pt-1 md:mb-0">
-          <a href="https://www.instagram.com/_interra/?hl=fr" target="_blank" rel="noreferrer">
+          <a href="https://www.instagram.com/_interra/?hl=fr" target="_blank" rel="noreferrer" aria-label="Suivez-nous sur Instagram">
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 256 256">
               <g fill="none">
                 <rect width="256" height="256" fill="url(#skillIconsInstagram0)" rx="60"/>

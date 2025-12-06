@@ -5,7 +5,11 @@ import adapter from '@sveltejs/adapter-netlify'
 const config = {
   preprocess: vitePreprocess(),
   kit: {
-    adapter: adapter()
+    adapter: adapter(),
+    prerender: {
+      // Active le pré-rendu pour toutes les pages (mode statique/headless)
+      handleHttpError: 'warn'
+    }
   }
 }
 

@@ -1,22 +1,8 @@
 import type { PageLoad } from './$types';
+import { incubateurInclusifContent } from '$lib/content/incubateur-inclusif';
 
-export const load: PageLoad = async ({ fetch }) => {
-  try {
-    const response = await fetch('/api/incubateur-inclusif');
-    const result = await response.json();
-    
-    if (result.error) {
-      console.error('Erreur API:', result.error);
-      return { 
-        incubateurInclusif: null 
-      };
-    }
-    
-    return result;
-  } catch (error) {
-    console.error('Erreur lors du chargement des données:', error);
-    return { 
-      incubateurInclusif: null 
-    };
-  }
+export const load: PageLoad = async () => {
+  return {
+    incubateurInclusif: incubateurInclusifContent.incubateurInclusif
+  };
 };
