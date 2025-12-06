@@ -1,5 +1,6 @@
 import type { PageLoad } from './$types';
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 export const load: PageLoad = async ({ fetch }) => {
   try {
@@ -15,6 +16,8 @@ export const load: PageLoad = async ({ fetch }) => {
   }
 };
 =======
+=======
+>>>>>>> Stashed changes
 import { agirAvecNousContent } from '$lib/content/agir-avec-nous';
 
 export const load: PageLoad = async () => {
@@ -23,4 +26,7 @@ export const load: PageLoad = async () => {
   };
 };
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
