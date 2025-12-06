@@ -6,10 +6,3 @@ export const load: PageLoad = async () => {
     interAct: interActContent.interAct
   };
 };
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes

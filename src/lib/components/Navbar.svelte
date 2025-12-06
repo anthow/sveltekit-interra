@@ -1,18 +1,8 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
   import { goto } from '$app/navigation';
-  
-  let menuData: any = null;
+  import { menuContent } from '$lib/content/menu';
+  const menuData = menuContent;
   let navbarOpen = false;
-  
-  onMount(async () => {
-    try {
-      const response = await fetch('/api/menu');
-      menuData = await response.json();
-    } catch (error) {
-      console.error('Erreur lors du chargement du menu:', error);
-    }
-  });
 </script>
 
 <header class="w-10/12 m-auto">
