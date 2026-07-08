@@ -170,14 +170,16 @@
               <li class="hover:opacity-80 text-jaune-interra text-center mb-2 text-sm md:text-lg">
                 <a href="/duo2change">{menuData?.menu?.sousMenuProjetDuo || 'Duo2Change'}</a>
               </li>
-              <li class="hover:opacity-80 text-orange-interra text-center mb-2 text-sm md:text-lg">
-                <a href="/interlab">{menuData?.menu?.sousMenuProjetInterlab || 'Interlab'}</a>
-              </li>
               <li class="hover:opacity-80 text-bleu-interra text-center mb-2 text-sm md:text-lg">
                 <a href="/formation-interculturelle">{menuData?.menu?.sousMenuProjetFormation || 'Formation'}</a>
               </li>
             </ul>
           </div>
+        </li>
+        
+        <!-- Service traiteur -->
+        <li class="hover:text-yellow-500 text-center mb-2 md:mb-0 text-sm md:text-lg">
+          <a href="/service-traiteur">{menuData?.menu?.menuPrincipalServiceTraiteur || 'Service traiteur'}</a>
         </li>
         
         <!-- Agenda -->

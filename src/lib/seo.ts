@@ -236,6 +236,11 @@ export const pageSEOConfigs: Record<string, SEOConfig> = {
     description: 'Explorez tous nos projets d\'intégration et d\'interculturalité : Duo2Change, formations, ateliers et bien plus.',
     keywords: ['projets interra', 'duo2change', 'ateliers', 'activités']
   },
+  '/service-traiteur': {
+    title: 'Service traiteur - INTERRA',
+    description: 'Découvrez notre service traiteur et accédez à la présentation PDF.',
+    keywords: ['service traiteur', 'traiteur', 'événements', 'INTERRA']
+  },
   '/inter-act': {
     title: 'Inter-act - Ateliers de Création de Lien Social',
     description: 'Découvrez nos ateliers Inter-act pour créer du lien entre les personnes récemment arrivées et la population locale de Liège.',

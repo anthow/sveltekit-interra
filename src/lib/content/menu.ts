@@ -12,6 +12,7 @@ export const menuContent = {
     menuPrincipalUnAccueil: "Accueil",
     menuPrincipalDeuxDecouvrirInterra: "Découvrir Interra",
     menuPrincipalTroisProjets: "Projets",
+    menuPrincipalServiceTraiteur: "Service traiteur",
     menuPrincipalQuatreAgenda: "Agenda",
     menuPrincipalCinqAgirAvecNous: "Agir avec nous",
     menuPrincipalSixContact: "Contact",

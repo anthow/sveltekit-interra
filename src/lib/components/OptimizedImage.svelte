@@ -1,13 +1,13 @@
 <script lang="ts">
   export let src: string;
   export let alt: string;
-  export let width?: number;
-  export let height?: number;
+  export let width: number | undefined;
+  export let height: number | undefined;
   export let loading: 'lazy' | 'eager' = 'lazy';
   export let className: string = '';
   export let priority: boolean = false;
-  export let sizes?: string;
-  export let srcset?: string;
+  export let sizes: string | undefined;
+  export let srcset: string | undefined;
 
   // Génération automatique d'alt text si non fourni
   $: optimizedAlt = alt || generateAltFromSrc(src);

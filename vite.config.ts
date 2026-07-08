@@ -13,9 +13,6 @@ export default defineConfig({
 			}
 		}
 	},
-	optimizeDeps: {
-		include: ['svelte']
-	},
 	ssr: {
 		noExternal: ['@datocms/cda-client']
 	}

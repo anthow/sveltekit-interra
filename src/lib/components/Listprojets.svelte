@@ -63,35 +63,6 @@
       </a>
     </div>
 
-    <!-- Incubateur Inclusif -->
-    <div class="flex flex-col">
-      <a href="/incubateur-inclusif">
-        {#if data?.incubateurInclusif?.imageListeProjets?.url}
-          <img 
-            src={data.incubateurInclusif.imageListeProjets.url || ''} 
-            alt={data.incubateurInclusif.imageListeProjets.alt || 'InterLab'} 
-            class="mb-5 w-full h-[400px] object-cover"
-            loading="lazy"
-            decoding="async"
-          />
-        {:else}
-          <div class="mb-5 w-full h-[400px] bg-gray-200 flex items-center justify-center">
-            <p class="text-gray-500">Image non disponible</p>
-          </div>
-        {/if}
-        <h1 class="text-orange-interra mb-2 text-2xl">
-          {data?.incubateurInclusif?.titre || 'InterLab'}
-        </h1>
-        <div>
-          {#if data?.incubateurInclusif?.chapeau}
-            {@html data.incubateurInclusif.chapeau}
-          {:else}
-            <p>L'InterLab accompagne les personnes nouvellement arrivées à la création d'organisation d'entreprises, ONG, ASBL...</p>
-          {/if}
-        </div>
-      </a>
-    </div>
-
     <!-- Formation Interculturelle -->
     <div class="flex flex-col">
       <a href="/formation-interculturelle">
