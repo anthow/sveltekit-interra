@@ -90,62 +90,16 @@ export let data: PageData;
           </div>
         </section>
 
-        <!-- Section L'histoire de ... -->
-        <section class="md:bg-vert-interra pb-10 md:pb-0">
-          <div class="w-10/12 md:pb-20 mt-10 md:mt-0 m-auto">
-            <h2 class="text-2xl md:text-4xl font-normal text-white text-center my-5 md:mt-0 mb-5">
-              L'histoire de ...
-            </h2>
-          </div>
-        </section>
-        <section class="pb-5 md:pb-0">
-          <div class="w-10/12 m-auto">
-            <div class="md:grid grid-cols-3 gap-x-5">
-              <figure class="md:relative md:bottom-20">
-                {#if data?.histoireDe?.imageHistoireDe}
-                  <img src={data.histoireDe.imageHistoireDe.url || ''} alt={data.histoireDe.imageHistoireDe.alt} class="w-full h-auto" loading="lazy" decoding="async" />
-                {:else}
-                  <div class="text-center p-8 bg-gray-100">
-                    <p class="text-red-500">Erreur : Image histoire non disponible</p>
-                  </div>
-                {/if}
-              </figure>
-              
-              <article class="self-center flex flex-col justify-center">
-                <div class="px-2 my-5 md:my text-center">
-                  {#if data?.histoireDe?.textePageDAccueil}
-                    {@html data.histoireDe.textePageDAccueil}
-                  {:else}
-                    <p class="text-red-500">Erreur : Texte histoire non disponible</p>
-                  {/if}
-                </div>
-              
-              
-              </article>
-              
-              <figure class="md:relative md:bottom-20">
-                {#if data?.histoireDe?.imageAccueil}
-                  <img src={data.histoireDe.imageAccueil.url || ''} alt={data.histoireDe.imageAccueil.alt} class="w-full h-auto" loading="lazy" decoding="async" />
-                {:else}
-                  <div class="text-center p-8 bg-gray-100">
-                    <p class="text-red-500">Erreur : Image accueil histoire non disponible</p>
-                  </div>
-                {/if}
-              </figure>
-            </div>
-          </div>
-        </section>
-
         <!-- Section Actus / Événements -->
-        <section class="w-10/12 m-auto">
-          <h2 class="text-2xl md:text-4xl font-normal text-white text-center my-5 md:mt-0 mb-5">
+        <section class="w-10/12 m-auto py-12 md:py-16">
+          <h2 class="text-2xl md:text-4xl font-normal text-vert-interra text-center mb-8 md:mb-10">
             Actus / Événements
           </h2>
           <Information data={data} />
         </section>
 
         <!-- Section Agir avec nous -->
-        <section class="w-12/12 md:10/12 m-auto md:grid grid-cols-3 mt-10 md:mt-40 auto-cols-fr content-center">
+        <section class="w-12/12 md:10/12 m-auto md:grid grid-cols-3 mt-10 md:mt-20 auto-cols-fr content-center">
           <div class="bg-orange-interra flex flex-col md:grid grid-cols-2 col-span-2 py-16">
             <article class="flex flex-col place-self-center order-2 px-10 md:px-0 py-5 md:pt-0">
               <h2 class="text-2xl md:text-4xl font-normal text-white text-center my-5 md:mt-0 mb-5">
@@ -163,7 +117,7 @@ export let data: PageData;
               <ul class="flex flex-col gap-2 justify-self-right items-center m-auto content-center self-center">
                 {#if data?.menu?.sousMenuAgirAvecNousDevenirTalent}
                   <li>
-                    <a href="/agir-avec-nous/talent-interact">
+                    <a href="/agir-avec-nous/#membre">
                       <button class="text-white font-black border p-1 px-2 border-white rounded hover:bg-white hover:text-orange-interra">
                         {data.menu.sousMenuAgirAvecNousDevenirTalent}
                       </button>
@@ -172,25 +126,16 @@ export let data: PageData;
                 {/if}
                 {#if data?.menu?.sousMenuAgirAvecNousFormerUnduo}
                   <li>
-                    <a href="/agir-avec-nous/former-duo">
+                    <a href="/agir-avec-nous/#duo">
                       <button class="text-white font-black border p-1 px-2 border-white rounded hover:bg-white hover:text-orange-interra">
                         {data.menu.sousMenuAgirAvecNousFormerUnduo}
                       </button>
                     </a>
                   </li>
                 {/if}
-                {#if data?.menu?.sousMenuAgirAvecNousDevenirCoah}
-                  <li>
-                    <a href="/agir-avec-nous/interlab">
-                      <button class="text-white font-black border p-1 px-2 border-white rounded hover:bg-white hover:text-orange-interra">
-                        {data.menu.sousMenuAgirAvecNousDevenirCoah}
-                      </button>
-                    </a>
-                  </li>
-                {/if}
                 {#if data?.menu?.sousMenuAgirAvecNousParticiperFormation}
                   <li>
-                    <a href="/agir-avec-nous/participer-formation">
+                    <a href="/agir-avec-nous/#formation">
                       <button class="text-white font-black border p-1 px-2 border-white rounded hover:bg-white hover:text-orange-interra">
                         {data.menu.sousMenuAgirAvecNousParticiperFormation}
                       </button>
@@ -199,7 +144,7 @@ export let data: PageData;
                 {/if}
                 {#if data?.menu?.sousMenuAgirAvecNousDevenirVolontaire}
                   <li>
-                    <a href="/agir-avec-nous/devenir-volontaire">
+                    <a href="/agir-avec-nous/#volontaire">
                       <button class="text-white font-black border p-1 px-2 border-white rounded hover:bg-white hover:text-orange-interra">
                         {data.menu.sousMenuAgirAvecNousDevenirVolontaire}
                       </button>

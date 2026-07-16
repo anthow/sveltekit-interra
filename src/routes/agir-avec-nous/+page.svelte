@@ -108,45 +108,6 @@
               </figure>
             </section>
 
-            <div id="coach"></div>
-
-            <!-- Section Talent -->
-            <section class="bg-orange-interra flex flex-col md:flex-row justify-around min-h-[400px]">
-              <figure class="h-full flex-1">
-                {#if data.agirAvecNou?.imageTalent?.url}
-                  <img 
-                    src={data.agirAvecNou.imageTalent.url || ''} 
-                    alt={data.agirAvecNou.imageTalent.alt || 'Rejoindre InterLab'} 
-                    class="w-full h-full object-cover"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                {:else}
-                  <div class="w-full h-full bg-gray-300 flex items-center justify-center">
-                    <p class="text-gray-600">Image non disponible</p>
-                  </div>
-                {/if}
-              </figure>
-
-              <div class="p-10 flex-1 flex flex-col justify-center">
-                <h2 class="mb-2 mb-10 text-white font-semibold text-3xl">
-                  {data.agirAvecNou?.titreTalent || 'Rejoindre InterLab'}
-                </h2>
-                <div>
-                  {#if data.agirAvecNou?.texteTalent}
-                    {@html data.agirAvecNou.texteTalent}
-                  {:else}
-                    <p class="text-white">Partagez vos talents et votre expertise.</p>
-                  {/if}
-                </div>
-                <a href="/agir-avec-nous/interlab">
-                  <button class="mt-10 bg-white text-orange-interra font-black p-2 hover:opacity-90">
-                    Rejoindre l'InterLab
-                  </button>
-                </a>
-              </div>
-            </section>
-
             <div id="formation"></div>
 
             <!-- Section Formation -->

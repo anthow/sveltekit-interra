@@ -198,19 +198,16 @@
         </button>
             <ul class="dropdown-menu absolute hidden z-50 bg-white text-gray-700 p-4 pt-3">
               <li class="hover:text-yellow-500 text-center mb-2 text-sm md:text-lg">
-                <a href="/agir-avec-nous/talent-interact">{menuData?.menu?.sousMenuAgirAvecNousDevenirTalent || 'Devenir Talent'}</a>
+                <a href="/agir-avec-nous/#membre">{menuData?.menu?.sousMenuAgirAvecNousDevenirTalent || 'Devenir Talent'}</a>
               </li>
               <li class="hover:text-yellow-500 text-center mb-2 text-sm md:text-lg">
-                <a href="/agir-avec-nous/former-duo">{menuData?.menu?.sousMenuAgirAvecNousFormerUnduo || 'Former un duo'}</a>
+                <a href="/agir-avec-nous/#duo">{menuData?.menu?.sousMenuAgirAvecNousFormerUnduo || 'Former un duo'}</a>
               </li>
               <li class="hover:text-yellow-500 text-center text-sm md:text-lg mb-2">
-                <a href="/agir-avec-nous/interlab">{menuData?.menu?.sousMenuAgirAvecNousDevenirCoah || 'Devenir Coach'}</a>
+                <a href="/agir-avec-nous/#formation">{menuData?.menu?.sousMenuAgirAvecNousParticiperFormation || 'Participer Formation'}</a>
               </li>
               <li class="hover:text-yellow-500 text-center text-sm md:text-lg mb-2">
-                <a href="/agir-avec-nous/participer-formation">{menuData?.menu?.sousMenuAgirAvecNousParticiperFormation || 'Participer Formation'}</a>
-              </li>
-              <li class="hover:text-yellow-500 text-center text-sm md:text-lg mb-2">
-                <a href="/agir-avec-nous/devenir-volontaire">{menuData?.menu?.sousMenuAgirAvecNousDevenirVolontaire || 'Devenir Volontaire'}</a>
+                <a href="/agir-avec-nous/#volontaire">{menuData?.menu?.sousMenuAgirAvecNousDevenirVolontaire || 'Devenir Volontaire'}</a>
               </li>
               <li class="hover:text-yellow-500 text-center text-sm md:text-lg mb-2">
                 <a href="/agir-avec-nous/#don">{menuData?.menu?.sousMenuAgirAvecNousFaireDon || 'Faire un don'}</a>

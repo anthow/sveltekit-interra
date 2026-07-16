@@ -41,4 +41,6 @@
       </article>
     {/each}
   </div>
+{:else}
+  <p class="text-center text-gray-600">Pas d'actualités pour le moment.</p>
 {/if}
