@@ -30,24 +30,24 @@
             <div id="membre"></div>
 
             <!-- Section Membre -->
-            <section class="bg-orange-interra flex flex-col md:flex-row justify-around min-h-[400px]">
-              <figure class="h-full flex-1">
+            <section class="bg-orange-interra grid md:grid-cols-2 min-h-[400px]">
+              <figure class="relative min-h-[280px] md:min-h-full md:h-full">
                 {#if data.agirAvecNou?.imageMembre?.url}
                   <img 
                     src={data.agirAvecNou.imageMembre.url || ''} 
                     alt={data.agirAvecNou.imageMembre.alt || 'Devenir membre'} 
-                    class="w-full h-full object-cover"
+                    class="absolute inset-0 w-full h-full object-cover"
                     loading="lazy"
                     decoding="async"
                   />
                 {:else}
-                  <div class="w-full h-full bg-gray-300 flex items-center justify-center">
+                  <div class="absolute inset-0 bg-gray-300 flex items-center justify-center">
                     <p class="text-gray-600">Image non disponible</p>
                   </div>
                 {/if}
               </figure>
 
-              <div class="p-10 flex-1 flex flex-col justify-center">
+              <div class="p-10 flex flex-col justify-center">
                 <h2 class="mb-2 mb-10 text-white font-semibold text-3xl">
                   {data.agirAvecNou?.titreMembre || 'Devenir membre'}
                 </h2>
@@ -72,8 +72,8 @@
             <div id="duo"></div>
 
             <!-- Section Duo -->
-            <section class="bg-vert-interra flex flex-col md:flex-row justify-around min-h-[400px]">
-              <div class="p-10 order-2 md:order-1 flex-1 flex flex-col justify-center">
+            <section class="bg-vert-interra grid md:grid-cols-2 min-h-[400px]">
+              <div class="p-10 order-2 md:order-1 flex flex-col justify-center">
                 <h2 class="mb-2 mb-10 text-white font-semibold text-3xl">
                   {data.agirAvecNou?.titreDuoLangue || 'Former un duo'}
                 </h2>
@@ -91,17 +91,17 @@
                 </a>
               </div>
 
-              <figure class="h-full flex-1 order-1 md:order-2">
+              <figure class="relative order-1 md:order-2 min-h-[280px] md:min-h-full md:h-full">
                 {#if data.agirAvecNou?.imageDuoLange?.url}
                   <img 
                     src={data.agirAvecNou.imageDuoLange.url || ''} 
                     alt={data.agirAvecNou.imageDuoLange.alt || 'Former un duo'} 
-                    class="w-full h-full object-cover"
+                    class="absolute inset-0 w-full h-full object-cover"
                     loading="lazy"
                     decoding="async"
                   />
                 {:else}
-                  <div class="w-full h-full bg-gray-300 flex items-center justify-center">
+                  <div class="absolute inset-0 bg-gray-300 flex items-center justify-center">
                     <p class="text-gray-600">Image non disponible</p>
                   </div>
                 {/if}
@@ -110,9 +110,9 @@
 
             <div id="formation"></div>
 
-            <!-- Section Formation -->
-            <section class="bg-vert-interra flex flex-col md:flex-row justify-around min-h-[400px]">
-              <div class="p-10 order-2 md:order-1 flex-1 flex flex-col justify-center">
+            <!-- Section Formation / Com'Together -->
+            <section class="bg-vert-interra grid md:grid-cols-2 min-h-[400px]">
+              <div class="p-10 order-2 md:order-1 flex flex-col justify-center">
                 <h2 class="mb-2 mb-10 text-white font-semibold text-3xl">
                   {data.agirAvecNou?.titreParticiperFormation || 'Participer à une formation'}
                 </h2>
@@ -130,17 +130,17 @@
                 </a>
               </div>
 
-              <figure class="h-full flex-1 order-1 md:order-2">
+              <figure class="relative order-1 md:order-2 min-h-[280px] md:min-h-full md:h-full">
                 {#if data.agirAvecNou?.imageParticiperFormation?.url}
                   <img 
                     src={data.agirAvecNou.imageParticiperFormation.url || ''} 
                     alt={data.agirAvecNou.imageParticiperFormation.alt || 'Formation'} 
-                    class="w-full h-full object-cover"
+                    class="absolute inset-0 w-full h-full object-cover"
                     loading="lazy"
                     decoding="async"
                   />
                 {:else}
-                  <div class="w-full h-full bg-gray-300 flex items-center justify-center">
+                  <div class="absolute inset-0 bg-gray-300 flex items-center justify-center">
                     <p class="text-gray-600">Image non disponible</p>
                   </div>
                 {/if}
@@ -150,24 +150,24 @@
             <div id="volontaire"></div>
 
             <!-- Section Volontaire -->
-            <section class="bg-orange-interra flex flex-col md:flex-row justify-around min-h-[400px]">
-              <figure class="h-full flex-1">
+            <section class="bg-orange-interra grid md:grid-cols-2 min-h-[400px]">
+              <figure class="relative min-h-[280px] md:min-h-full md:h-full">
                 {#if data.agirAvecNou?.imageBNVole?.url}
                   <img 
                     src={data.agirAvecNou.imageBNVole.url || ''} 
                     alt={data.agirAvecNou.imageBNVole.alt || 'Devenir volontaire'} 
-                    class="w-full h-full object-cover"
+                    class="absolute inset-0 w-full h-full object-cover"
                     loading="lazy"
                     decoding="async"
                   />
                 {:else}
-                  <div class="w-full h-full bg-gray-300 flex items-center justify-center">
+                  <div class="absolute inset-0 bg-gray-300 flex items-center justify-center">
                     <p class="text-gray-600">Image non disponible</p>
                   </div>
                 {/if}
               </figure>
               
-              <div class="p-10 order-2 md:order-1 flex-1 flex flex-col justify-center">
+              <div class="p-10 flex flex-col justify-center">
                 <h2 class="mb-2 mb-10 text-white font-semibold text-3xl">
                   {data.agirAvecNou?.titreBNVole || 'Devenir Volontaire'}
                 </h2>
@@ -189,8 +189,8 @@
             <div id="don"></div>
 
             <!-- Section Don -->
-            <section class="bg-vert-interra flex flex-col md:flex-row justify-around min-h-[400px]">
-              <div class="p-10 pb-2 order-2 md:order-1 flex-1 flex flex-col justify-center">
+            <section class="bg-vert-interra grid md:grid-cols-2 min-h-[400px]">
+              <div class="p-10 pb-2 order-2 md:order-1 flex flex-col justify-center">
                 <h2 class="mb-10 text-white font-semibold text-3xl">
                   {data.agirAvecNou?.titreDon || 'Faire un don'}
                 </h2>
@@ -206,17 +206,17 @@
                 </p>
               </div>
 
-              <figure class="h-full flex-1 order-1 md:order-2">
+              <figure class="relative order-1 md:order-2 min-h-[280px] md:min-h-full md:h-full">
                 {#if data.agirAvecNou?.imageDon?.url}
                   <img 
                     src={data.agirAvecNou.imageDon.url || ''} 
                     alt={data.agirAvecNou.imageDon.alt || 'Faire un don'} 
-                    class="w-full h-full object-cover"
+                    class="absolute inset-0 w-full h-full object-cover"
                     loading="lazy"
                     decoding="async"
                   />
                 {:else}
-                  <div class="w-full h-full bg-gray-300 flex items-center justify-center">
+                  <div class="absolute inset-0 bg-gray-300 flex items-center justify-center">
                     <p class="text-gray-600">Image non disponible</p>
                   </div>
                 {/if}
