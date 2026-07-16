@@ -112,7 +112,23 @@
 
             <!-- Section Formation / Com'Together -->
             <section class="bg-vert-interra grid md:grid-cols-2 min-h-[400px]">
-              <div class="p-10 order-2 md:order-1 flex flex-col justify-center">
+              <figure class="relative order-1 min-h-[280px] md:min-h-full md:h-full">
+                {#if data.agirAvecNou?.imageParticiperFormation?.url}
+                  <img 
+                    src={data.agirAvecNou.imageParticiperFormation.url || ''} 
+                    alt={data.agirAvecNou.imageParticiperFormation.alt || 'Formation'} 
+                    class="absolute inset-0 w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                {:else}
+                  <div class="absolute inset-0 bg-gray-300 flex items-center justify-center">
+                    <p class="text-gray-600">Image non disponible</p>
+                  </div>
+                {/if}
+              </figure>
+
+              <div class="p-10 order-2 flex flex-col justify-center">
                 <h2 class="mb-2 mb-10 text-white font-semibold text-3xl">
                   {data.agirAvecNou?.titreParticiperFormation || 'Participer à une formation'}
                 </h2>
@@ -129,45 +145,13 @@
                   </button>
                 </a>
               </div>
-
-              <figure class="relative order-1 md:order-2 min-h-[280px] md:min-h-full md:h-full">
-                {#if data.agirAvecNou?.imageParticiperFormation?.url}
-                  <img 
-                    src={data.agirAvecNou.imageParticiperFormation.url || ''} 
-                    alt={data.agirAvecNou.imageParticiperFormation.alt || 'Formation'} 
-                    class="absolute inset-0 w-full h-full object-cover"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                {:else}
-                  <div class="absolute inset-0 bg-gray-300 flex items-center justify-center">
-                    <p class="text-gray-600">Image non disponible</p>
-                  </div>
-                {/if}
-              </figure>
             </section>
 
             <div id="volontaire"></div>
 
             <!-- Section Volontaire -->
             <section class="bg-orange-interra grid md:grid-cols-2 min-h-[400px]">
-              <figure class="relative min-h-[280px] md:min-h-full md:h-full">
-                {#if data.agirAvecNou?.imageBNVole?.url}
-                  <img 
-                    src={data.agirAvecNou.imageBNVole.url || ''} 
-                    alt={data.agirAvecNou.imageBNVole.alt || 'Devenir volontaire'} 
-                    class="absolute inset-0 w-full h-full object-cover"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                {:else}
-                  <div class="absolute inset-0 bg-gray-300 flex items-center justify-center">
-                    <p class="text-gray-600">Image non disponible</p>
-                  </div>
-                {/if}
-              </figure>
-              
-              <div class="p-10 flex flex-col justify-center">
+              <div class="p-10 order-2 md:order-1 flex flex-col justify-center">
                 <h2 class="mb-2 mb-10 text-white font-semibold text-3xl">
                   {data.agirAvecNou?.titreBNVole || 'Devenir Volontaire'}
                 </h2>
@@ -184,29 +168,29 @@
                   </button>
                 </a>
               </div>
+
+              <figure class="relative order-1 md:order-2 min-h-[280px] md:min-h-full md:h-full">
+                {#if data.agirAvecNou?.imageBNVole?.url}
+                  <img 
+                    src={data.agirAvecNou.imageBNVole.url || ''} 
+                    alt={data.agirAvecNou.imageBNVole.alt || 'Devenir volontaire'} 
+                    class="absolute inset-0 w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                {:else}
+                  <div class="absolute inset-0 bg-gray-300 flex items-center justify-center">
+                    <p class="text-gray-600">Image non disponible</p>
+                  </div>
+                {/if}
+              </figure>
             </section>
 
             <div id="don"></div>
 
             <!-- Section Don -->
             <section class="bg-vert-interra grid md:grid-cols-2 min-h-[400px]">
-              <div class="p-10 pb-2 order-2 md:order-1 flex flex-col justify-center">
-                <h2 class="mb-10 text-white font-semibold text-3xl">
-                  {data.agirAvecNou?.titreDon || 'Faire un don'}
-                </h2>
-                <div>
-                  {#if data.agirAvecNou?.texteDon}
-                    {@html data.agirAvecNou.texteDon}
-                  {:else}
-                    <p class="text-white">Soutenez nos actions par un don.</p>
-                  {/if}
-                </div>
-                <p class="mt-10 text-white font-black">
-                  {data.agirAvecNou?.numRoDeCompte || 'Numéro de compte à venir'}
-                </p>
-              </div>
-
-              <figure class="relative order-1 md:order-2 min-h-[280px] md:min-h-full md:h-full">
+              <figure class="relative order-1 min-h-[280px] md:min-h-full md:h-full">
                 {#if data.agirAvecNou?.imageDon?.url}
                   <img 
                     src={data.agirAvecNou.imageDon.url || ''} 
@@ -221,6 +205,22 @@
                   </div>
                 {/if}
               </figure>
+
+              <div class="p-10 order-2 pb-2 flex flex-col justify-center">
+                <h2 class="mb-10 text-white font-semibold text-3xl">
+                  {data.agirAvecNou?.titreDon || 'Faire un don'}
+                </h2>
+                <div>
+                  {#if data.agirAvecNou?.texteDon}
+                    {@html data.agirAvecNou.texteDon}
+                  {:else}
+                    <p class="text-white">Soutenez nos actions par un don.</p>
+                  {/if}
+                </div>
+                <p class="mt-10 text-white font-black">
+                  {data.agirAvecNou?.numRoDeCompte || 'Numéro de compte à venir'}
+                </p>
+              </div>
             </section>
           </article>
         </div>
