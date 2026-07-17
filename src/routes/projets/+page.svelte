@@ -24,44 +24,9 @@
       {:else}
         <article class="m-auto flex flex-col">
           <article class="w-10/12 m-auto">
-            <section class="mt-10 flex flex-col space-y-20 m-auto">
-              <div class="flex flex-col gap-10 md:grid grid-cols-2">
-                <figure class="">
-                  {#if data.nosProjet?.imageDeLaPage?.url}
-                    <img 
-                      src={data.nosProjet.imageDeLaPage.url || ''} 
-                      alt={data.nosProjet.imageDeLaPage.alt || 'Nos projets'} 
-                      class="w-full h-auto"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  {:else}
-                    <div class="w-full h-64 bg-gray-200 flex items-center justify-center">
-                      <p class="text-gray-500">Image non disponible</p>
-                    </div>
-                  {/if}
-                </figure>
-                <div class="flex flex-col gap-5">
-                  <h1 class="text-center font-black text-4xl mb-10 text-vert-interra bg-white">
-                    {data.nosProjet?.titreDeLaPage || 'Nos projets'}
-                  </h1>
-                  
-                  <div class="paragraphe">
-                    {#if data.nosProjet?.texteDeLaPage}
-                      {@html data.nosProjet.texteDeLaPage}
-                    {:else}
-                      <p>Vous souhaitez tout savoir sur les projets d'INTERRA ? Consultez le Dossier de présentation !</p>
-                    {/if}
-                  </div>
-                  
-                  <a href={data.nosProjet?.urlPdf || "https://miniurl.be/r-4lo4"} rel="noreferrer" target="_blank" class="mt-10 text-center"> 
-                    <button class="w-max mt-5 text-white bg-vert-interra font-black p-1 px-2 rounded hover:bg-white hover:text-vert-interra hover:border-vert-interra border">
-                      Découvrir nos projets
-                    </button>
-                  </a>
-                </div>
-              </div> 
-            </section>
+            <h1 class="text-center font-black text-4xl mt-10 mb-10 text-vert-interra">
+              {data.nosProjet?.titreDeLaPage || 'Nos projets'}
+            </h1>
           </article>
 
           <Listprojets data={data} />

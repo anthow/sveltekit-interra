@@ -22,47 +22,9 @@
         </div>
       {:else}
         <article class="w-10/12 m-auto">
-          <section class="mt-10 flex flex-col space-y-20 m-auto">
-            <div class="flex flex-col gap-10 md:grid grid-cols-2">
-              <figure>
-                {#if data.nosProjet?.imageDeLaPage?.url}
-                  <img src={data.nosProjet.imageDeLaPage.url || ''} alt={data.nosProjet.imageDeLaPage.alt || 'Image projet'} class="" />
-                {:else}
-                  <div class="text-center p-8 bg-gray-100">
-                    <p class="text-red-500">Erreur : Image projet non disponible</p>
-                  </div>
-                {/if}
-              </figure>
-              
-              <div class="flex flex-col gap-5">
-                <h1 class="font-black text-4xl mb-10 md:mb-20 text-jaune-interra bg-white text-center">
-                  {data.nosProjet?.titreDeLaPage || 'Nos projets'}
-                </h1>
-                
-                <div class="paragraphe">
-                  {#if data.nosProjet?.texteDeLaPage}
-                    {@html data.nosProjet.texteDeLaPage}
-                  {:else}
-                    <p class="text-red-500">Erreur : Texte projet non disponible</p>
-                  {/if}
-                </div>
-                
-                {#if data.nosProjet?.urlPdf}
-                  <a href={data.nosProjet.urlPdf} rel="noreferrer" target="_blank" class="mt-10 text-center"> 
-                    <button class="w-max mt-5 text-white bg-vert-interra font-black p-1 px-2 rounded hover:bg-white hover:text-vert-interra hover:border-vert-interra border">
-                      Découvrir nos projets
-                    </button>
-                  </a>
-                {:else}
-                  <a href="https://miniurl.be/r-4lo4" rel="noreferrer" target="_blank" class="mt-10 text-center"> 
-                    <button class="w-max mt-5 text-white bg-vert-interra font-black p-1 px-2 rounded hover:bg-white hover:text-vert-interra hover:border-vert-interra border">
-                      Découvrir nos projets
-                    </button>
-                  </a>
-                {/if}
-              </div>
-            </div>
-          </section>
+          <h1 class="font-black text-4xl mt-10 mb-10 text-jaune-interra text-center">
+            {data.nosProjet?.titreDeLaPage || 'Nos projets'}
+          </h1>
         </article>
       {/if}
     </main>

@@ -54,16 +54,7 @@
         </div>
         
         <div class="space-y-4">
-          <a 
-            href="https://www.leetchi.com/c/interra-asbl" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            class="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-lg text-xl transition-colors duration-200"
-          >
-            💚 Soutenir Interra maintenant
-          </a>
-          
-          <p class="text-sm text-gray-600 mt-4">
+          <p class="text-sm text-gray-600">
             Ou par virement : BE65 1030 6350 8796
           </p>
         </div>
